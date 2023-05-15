@@ -4,7 +4,20 @@
     <link rel="stylesheet" href="{{ $indexStyle.Permalink | absURL }}" media="screen">
 {{ end }}
 {{ define "main" }}
+    <img class="logo" src="share.svg" alt="share logo" aria-label="share logo">
+    <h1 class="title">Share</h1>
+    <h3 class="description">Social media share buttons for hugo</h3>
+    <hr>
+    <h2 class="subtitle">With Labels</h2>
+    <div class="container">
+        {{ partial "utils/share-buttons/index.html" ( dict "withLabel" true ) }}
+    </div>
+    <h2 class="subtitle">Square Labeless</h2>
     <div class="container">
         {{ partial "utils/share-buttons/index.html" . }}
+    </div>
+    <h2 class="subtitle">Round Labeless</h2>
+    <div class="container">
+        {{ partial "utils/share-buttons/index.html" ( dict "round" true ) }}
     </div>
 {{ end }}
