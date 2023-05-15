@@ -1,5 +1,7 @@
 name: 'Feature Request'
-description: Suggest a feature for Angular Framework
+description: Suggest a feature
+title: "[Feature Request] "
+labels: ["feature request"]
 
 body:
   - type: textarea
