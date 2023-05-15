@@ -4,7 +4,11 @@
     <meta charset="utf-8">
     <title>{{ block "title" . }}
       {{ .Site.Title }}
-    {{ end }}</title>
+    {{ end }}
+    </title>
+    {{ block "head" . }}
+    {{ end }}
+    {{partial "head/share-buttons-styling.html"}}
   </head>
   <body>
     {{ block "main" . }}
