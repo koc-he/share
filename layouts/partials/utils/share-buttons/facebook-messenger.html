@@ -1,1 +1,2 @@
-<img src="share-buttons/facebook-messenger.svg"/>
+{{ $fmData := dict "label" "Facebook Messenger" "buttonClass" "facebook-messenger" "image" "facebook-messenger" "link" "/" "ariaLabel" "Share to Facebook Messenger" "round" false "withLabel" true }}
+{{ partial "utils/share-buttons/button.html" $fmData }}
