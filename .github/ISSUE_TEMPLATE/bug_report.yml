@@ -16,14 +16,14 @@ body:
       placeholder: ex. v0.111.3
     validations:
       required: true
-  - type: dropdown
-    id: is-regression
-    attributes:
-      label: Is this a regression
-      multiple: true
-      options:
-        - Yes
-        - No
+  # - type: dropdown
+  #   id: is-regression
+  #   attributes:
+  #     label: Is this a regression
+  #     multiple: true
+  #     options:
+  #       - Yes
+  #       - No
   - type: textarea
     id: description
     attributes:
@@ -45,25 +45,25 @@ body:
     attributes:
       label: Reproduction
       description: Please provide a link to a minimal reproduction of the bug
-  - type: dropdown
-    id: version
-    attributes:
-      label: Version
-      description: What version are you using?
-      options:
-        - 0.0.1 (Default)
-    validations:
-      required: true
-  - type: dropdown
-    id: browsers
-    attributes:
-      label: What browsers are you seeing the problem on?
-      multiple: true
-      options:
-        - Firefox
-        - Chrome
-        - Safari
-        - Microsoft Edge
+  # - type: dropdown
+  #   id: version
+  #   attributes:
+  #     label: Version
+  #     description: What version are you using?
+  #     options:
+  #       - 0.0.1 (Default)
+  #   validations:
+  #     required: true
+  # - type: dropdown
+  #   id: browsers
+  #   attributes:
+  #     label: What browsers are you seeing the problem on?
+  #     multiple: true
+  #     options:
+  #       - Firefox
+  #       - Chrome
+  #       - Safari
+  #       - Microsoft Edge
   - type: textarea
     id: logs
     attributes:
