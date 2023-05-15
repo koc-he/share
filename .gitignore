@@ -1,6 +1,3 @@
 themes/
 archetypes/
-assets/
-content/
-public/
-static/
+.hugo_build.lock
