@@ -2,7 +2,7 @@ name: '✨ Feature Request'
 description: Suggest a feature
 title: "[Feature Request] "
 labels: ["feature request"]
-
+assignees: ["koc-he"]
 body:
   - type: textarea
     id: description
