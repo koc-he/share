@@ -1,76 +1,47 @@
-name: '🐛 Bug Report'
-description: File a bug report
-title: "[Bug] "
-labels: ["bug", "triage"]
-
+name: 🐛Bug Report
+description: File a bug report here
+title: "[BUG]: "
+labels: ["bug"]
+assignees: ["koc-he"]
 body:
   - type: markdown
     attributes:
       value: |
-        Thanks for taking the time to fill out this bug report!
-  - type: input
-    id: contact
+        Thanks for taking the time to fill out this bug report!!!
+  - type: checkboxes
+    id: new-bug
     attributes:
-      label: Contact Details
-      description: What version of Hugo are you using?
-      placeholder: ex. v0.111.3
-    validations:
-      required: false
-  - type: dropdown
-    id: isRegression
-    attributes:
-      label: Is this a regression
-      multiple: false
+      label: Is there an existing issue for this?
+      description: Please search to see if an issue already exists for the bug you encountered.
       options:
-        - Yes
-        - No
+      - label: I have searched the existing issues
+        required: true
   - type: textarea
-    id: description
+    id: bug-description
     attributes:
-      label: Description
-      description: Tell us what you see!
-      value: "A bug happened!"
+      label: Description of the bug
+      description: Tell us what bug you encountered and what should have happened
     validations:
       required: true
   - type: textarea
-    id: expected-behaviour
+    id: steps-to-reproduce
     attributes:
-      label: Expected Behaviour
-      description: Tell us what you expected to see instead of the bug!
-      value: "Not to see the bug!"
-    validations:
-      required: true
-  - type: input
-    id: reproduction
-    attributes:
-      label: Reproduction
-      description: Please provide a link to a minimal reproduction of the bug
-  - type: dropdown
-    id: version
-    attributes:
-      label: Version
-      description: What version are you using?
-      options:
-        - 0.0.1 (Default)
+      label: Steps To Reproduce
+      description: Steps to reproduce the behavior.
+      placeholder: Please write the steps in a list form
     validations:
       required: true
   - type: dropdown
-    id: browsers
+    id: versions
     attributes:
-      label: What browsers are you seeing the problem on?
+      label: Which version of the app are you using?
+      description: If this issue is occurring on more than 1 version of the app, select the appropriate versions.
       multiple: true
       options:
-        - Firefox
-        - Chrome
-        - Safari
-        - Microsoft Edge
-  - type: textarea
-    id: logs
-    attributes:
-      label: Relevant log output
-      description: Please copy and paste any relevant log output. This will be automatically formatted into code, so no need for backticks.
-      render: Shell
-  - type: textarea
-    id: other
-    attributes:
-      label: Anything else?
+       - 1.0.0
+       - 1.1.0
+       - 1.2.0
+       - 2.0.0
+       - 2.1.0
+    validations:
+      required: true
