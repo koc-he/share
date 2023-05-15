@@ -1,0 +1,10 @@
+<div class="share-button-container">
+    <a href="{{ .link }}" class="share-button {{ .buttonClass }} {{ if .withLabel }} with-text {{ else if .round }} round {{ end }}" aria-label="{{.ariaLabel}}">
+        {{ readFile ( printf "static/share-buttons/%s.svg" .image ) | safeHTML }}
+        {{ if .withLabel }} 
+        <h4>
+            {{ .label }}
+        </h4>
+        {{ end }}
+    </a>
+</div>
