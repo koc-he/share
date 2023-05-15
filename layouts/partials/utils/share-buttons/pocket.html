@@ -1,2 +1,2 @@
-{{ $pocketData := dict "label" "Pocket" "buttonClass" "pocket" "image" "pocket" "link" "/" "ariaLabel" "Share to Pocket" "round" false "withLabel" true }}
+{{ $pocketData := dict "context" .  "label" "Pocket" "buttonClass" "pocket" "image" "pocket" "link" "/" "ariaLabel" "Share to Pocket" }}
 {{ partial "utils/share-buttons/button.html" $pocketData }}

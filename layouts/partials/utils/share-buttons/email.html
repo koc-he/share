@@ -1,6 +1,2 @@
-{{ $emailData := dict "label" "Email" "buttonClass" "email" "image" "email" "link" "/" "ariaLabel" "Share with email" "round" false "withLabel" true }}
+{{ $emailData := dict "context" .  "label" "Email" "buttonClass" "email" "image" "email" "link" "/" "ariaLabel" "Share with email" }}
 {{ partial "utils/share-buttons/button.html" $emailData }}
-<!-- {{ $emailData := dict "label" "Email" "buttonClass" "email" "image" "email" "link" "/" "ariaLabel" "Share with email" "round" true "withLabel" false }}
-{{ partial "utils/share-buttons/button.html" $emailData }}
-{{ $emailData := dict "label" "Email" "buttonClass" "email" "image" "email" "link" "/" "ariaLabel" "Share with email" "round" false "withLabel" false }}
-{{ partial "utils/share-buttons/button.html" $emailData }} -->

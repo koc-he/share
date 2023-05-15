@@ -1,2 +1,2 @@
-{{ $pinterestData := dict "label" "Pinterest" "buttonClass" "pinterest" "image" "pinterest" "link" "/" "ariaLabel" "Share to Pinterest" "round" false "withLabel" true }}
+{{ $pinterestData := dict "context" .  "label" "Pinterest" "buttonClass" "pinterest" "image" "pinterest" "link" "/" "ariaLabel" "Share to Pinterest" }}
 {{ partial "utils/share-buttons/button.html" $pinterestData }}

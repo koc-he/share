@@ -1,2 +1,2 @@
-{{ $mailRuData := dict "label" "Mail.ru" "buttonClass" "mail-ru" "image" "mail-ru" "link" "/" "ariaLabel" "Share to Mail.ru" "round" false "withLabel" true }}
+{{ $mailRuData := dict "context" .  "label" "Mail.ru" "buttonClass" "mail-ru" "image" "mail-ru" "link" "/" "ariaLabel" "Share to Mail.ru" }}
 {{ partial "utils/share-buttons/button.html" $mailRuData }}

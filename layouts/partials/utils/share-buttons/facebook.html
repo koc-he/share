@@ -1,2 +1,2 @@
-{{ $fbData := dict "label" "Facebook" "buttonClass" "facebook" "image" "facebook" "link" "/" "ariaLabel" "Share to Facebook" "round" false "withLabel" true }}
+{{ $fbData := dict "context" .  "label" "Facebook" "buttonClass" "facebook" "image" "facebook" "link" "/" "ariaLabel" "Share to Facebook" }}
 {{ partial "utils/share-buttons/button.html" $fbData }}

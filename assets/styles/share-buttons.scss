@@ -8,13 +8,20 @@ svg {
     max-height: 25px;
 }
 
+.share-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap:10px;
+}
+
 .share-button {
-    border: 1pz solid gray;
-    padding: 3px;
+    border: 1px solid rgba(206, 206, 206, 0.61);
+    padding: 5px;
     border-radius: 5px;
-    border: none;
-    height: 28px;
-    width: 28px;
+    height: 30px;
+    width: 30px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -24,6 +31,9 @@ svg {
 
     &.round {
         border-radius: 22px;
+        padding: 7px;
+        height: 32px;
+        width: 32px;
     }
 
     &.with-text {
@@ -36,9 +46,11 @@ svg {
     }
 
     &:hover, &:active {
-        background-color: black;
-        color: white;
+        background-color: white;
+        color: black;
         text-decoration: none;
+        border-color: lightgray;
+        box-shadow: 1px 1px 5px lightgray;
     }
 
     h4 {

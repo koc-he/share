@@ -1,2 +1,2 @@
-{{ $workplaceData := dict "label" "Workplace" "buttonClass" "workplace" "image" "workplace" "link" "/" "ariaLabel" "Share to Workplace" "round" false "withLabel" true }}
+{{ $workplaceData := dict "context" .  "label" "Workplace" "buttonClass" "workplace" "image" "workplace" "link" "/" "ariaLabel" "Share to Workplace" }}
 {{ partial "utils/share-buttons/button.html" $workplaceData }}

@@ -1,7 +1,35 @@
 <div class="share-button-container">
-    <a href="{{ .link }}" class="share-button {{ .buttonClass }} {{ if .withLabel }} with-text {{ else if .round }} round {{ end }}" aria-label="{{.ariaLabel}}">
+    {{ $useParam := eq (printf "%T" .context) "*hugolib.pageState" }}
+    
+    {{ $withLabel := false }}
+    {{ $isWithLabelSet := false }}
+
+    {{ if $useParam }}
+        {{ $isWithLabelSet = .context.Param "withLabel" }}
+    {{ else }}
+        {{ $isWithLabelSet = isset .context "withLabel" }}
+    {{ end }}
+
+    {{ if $isWithLabelSet }}
+        {{ $withLabel = .context.withLabel }}
+    {{ end }}
+    
+    {{ $round := false }}
+    {{ $isRoundSet := false }}
+
+    {{ if $useParam }}
+        {{ $isRoundSet = .context.Param "round" }}
+    {{ else }}
+        {{ $isRoundSet = isset .context "round" }}
+    {{ end }}
+
+    {{ if $isRoundSet }}
+        {{ $round = .context.round }}
+    {{ end }}
+
+    <a href="{{ .link }}" class="share-button {{ .buttonClass }} {{ if $withLabel }} with-text {{ else if $round }} round {{ end }}" aria-label="{{.ariaLabel}}">
         {{ readFile ( printf "static/share-buttons/%s.svg" .image ) | safeHTML }}
-        {{ if .withLabel }} 
+        {{ if $withLabel }} 
         <h4>
             {{ .label }}
         </h4>

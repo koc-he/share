@@ -1,2 +1,2 @@
-{{ $twitterData := dict "label" "Twitter" "buttonClass" "twitter" "image" "twitter" "link" "/" "ariaLabel" "Share to Odnoklassniki" "round" false "withLabel" true }}
+{{ $twitterData := dict "context" .  "label" "Twitter" "buttonClass" "twitter" "image" "twitter" "link" "/" "ariaLabel" "Share to Odnoklassniki" }}
 {{ partial "utils/share-buttons/button.html" $twitterData }}

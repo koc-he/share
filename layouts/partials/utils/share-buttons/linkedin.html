@@ -1,2 +1,2 @@
-{{ $linkedinData := dict "label" "LinkedIn" "buttonClass" "linkedin" "image" "linkedin" "link" "/" "ariaLabel" "Share to LinkedIn" "round" false "withLabel" true }}
+{{ $linkedinData := dict "context" .  "label" "LinkedIn" "buttonClass" "linkedin" "image" "linkedin" "link" "/" "ariaLabel" "Share to LinkedIn" }}
 {{ partial "utils/share-buttons/button.html" $linkedinData }}

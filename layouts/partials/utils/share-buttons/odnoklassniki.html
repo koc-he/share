@@ -1,2 +1,2 @@
-{{ $odnoklassnikiData := dict "label" "Odnoklassniki" "buttonClass" "odnoklassniki" "image" "odnoklassniki" "link" "/" "ariaLabel" "Share to Odnoklassniki" "round" false "withLabel" true }}
+{{ $odnoklassnikiData := dict "context" .  "label" "Odnoklassniki" "buttonClass" "odnoklassniki" "image" "odnoklassniki" "link" "/" "ariaLabel" "Share to Odnoklassniki" }}
 {{ partial "utils/share-buttons/button.html" $odnoklassnikiData }}

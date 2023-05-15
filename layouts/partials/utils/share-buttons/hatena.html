@@ -1,2 +1,2 @@
-{{ $hatenaData := dict "label" "Hatena" "buttonClass" "hatena" "image" "hatena" "link" "/" "ariaLabel" "Share to Hatena" "round" false "withLabel" true }}
+{{ $hatenaData := dict "context" .  "label" "Hatena" "buttonClass" "hatena" "image" "hatena" "link" "/" "ariaLabel" "Share to Hatena" }}
 {{ partial "utils/share-buttons/button.html" $hatenaData }}

@@ -1,2 +1,2 @@
-{{ $livelournalData := dict "label" "Live Journal" "buttonClass" "live-journal" "image" "live-journal" "link" "/" "ariaLabel" "Share to Live Journal" "round" false "withLabel" true }}
+{{ $livelournalData := dict "context" .  "label" "Live Journal" "buttonClass" "live-journal" "image" "live-journal" "link" "/" "ariaLabel" "Share to Live Journal" }}
 {{ partial "utils/share-buttons/button.html" $livelournalData }}

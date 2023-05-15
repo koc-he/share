@@ -1,2 +1,2 @@
-{{ $weiboData := dict "label" "Weibo" "buttonClass" "weibo" "image" "weibo" "link" "/" "ariaLabel" "Share to Weibo" "round" false "withLabel" true }}
+{{ $weiboData := dict "context" .  "label" "Weibo" "buttonClass" "weibo" "image" "weibo" "link" "/" "ariaLabel" "Share to Weibo" }}
 {{ partial "utils/share-buttons/button.html" $weiboData }}

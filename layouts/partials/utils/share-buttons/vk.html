@@ -1,2 +1,2 @@
-{{ $vkData := dict "label" "VK" "buttonClass" "vk" "image" "vk" "link" "/" "ariaLabel" "Share to VK" "round" false "withLabel" true }}
+{{ $vkData := dict "context" .  "label" "VK" "buttonClass" "vk" "image" "vk" "link" "/" "ariaLabel" "Share to VK" }}
 {{ partial "utils/share-buttons/button.html" $vkData }}

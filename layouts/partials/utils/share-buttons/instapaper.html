@@ -1,2 +1,2 @@
-{{ $ipData := dict "label" "Instapaper" "buttonClass" "instapaper" "image" "instapaper" "link" "/" "ariaLabel" "Share to Instapaper" "round" false "withLabel" true }}
+{{ $ipData := dict "context" .  "label" "Instapaper" "buttonClass" "instapaper" "image" "instapaper" "link" "/" "ariaLabel" "Share to Instapaper" }}
 {{ partial "utils/share-buttons/button.html" $ipData }}
