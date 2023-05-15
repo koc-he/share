@@ -16,14 +16,13 @@ body:
       placeholder: ex. v0.111.3
     validations:
       required: true
-  # - type: dropdown
-  #   id: is-regression
-  #   attributes:
-  #     label: Is this a regression
-  #     multiple: true
-  #     options:
-  #       - Yes
-  #       - No
+  - type: dropdown
+    id: is-regression
+    attributes:
+      label: Is this a regression?
+      options:
+        - Yes
+        - No
   - type: textarea
     id: description
     attributes:
