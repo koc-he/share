@@ -11,19 +11,26 @@
 .logo {
     background-color: rgb(48, 48, 48);
     color: white;
-    padding: 20px;
-    border-radius: 45px;
+    padding: 10px;
+    border-radius: 15px;
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 60px;
-    height: auto;
-    margin-bottom: 20px;
+    width: 45px;
+    height: 45px;
 
     img {
-        width: 40px;
+        width: 35px;
         height: auto;
     }
+}
+
+.title-container {
+    margin: 20px;
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
 }
 
 .title {
