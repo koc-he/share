@@ -1,7 +1,12 @@
+{{ $imageUrl := partial "utils/share-buttons/image-url.html" . }}
+
+{{ $query := querify "url" .Permalink "description" (truncate 40 ( or .Description .Summary )) "media" $imageUrl }}
+{{ $link := printf "https://pinterest.com/pin/create/button?%s" $query }}
+
 {{ .Scratch.SetInMap "data" "label" "Pinterest" }}
 {{ .Scratch.SetInMap "data"  "buttonClass" "pinterest" }}
 {{ .Scratch.SetInMap "data"  "image" "pinterest" }}
-{{ .Scratch.SetInMap "data"  "link" "/" }}
+{{ .Scratch.SetInMap "data"  "link" $link }}
 {{ .Scratch.SetInMap "data"  "ariaLabel" "Share to Pinterest" }}
 
 {{ partial "utils/share-buttons/button.html" . }}
