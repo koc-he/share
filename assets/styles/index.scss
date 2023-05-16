@@ -5,51 +5,69 @@
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
-    max-width: 750px;
+    border: 1px solid lightgray;
+    padding: 20px 10%;
+    border-radius: 8px;
+    flex: 1;
+    min-height: 200px;
 }
 
 .logo {
-    background-color: rgb(48, 48, 48);
+    background-color: black;
     color: white;
-    padding: 10px;
-    border-radius: 15px;
+    padding: 4px;
+    border-radius: 5px;
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 45px;
-    height: 45px;
+    width: 24px;
+    height: 24px;
+    margin-bottom: 50px;
 
     img {
-        width: 35px;
+        width: 20px;
         height: auto;
     }
 }
 
 .title-container {
-    margin: 20px;
+    margin-top: 20px;
     display: flex;
     gap: 20px;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
 }
 
 .title {
-    font-size: 80px;
     font-weight: bolder;
-    margin: 0;
+    margin: 0 0 20px 0;
+    font-size: 80px;
+    line-height: 75px;
+    max-width: 900px;
 }
 
 .description {
     margin: 0;
-    font-weight: lighter;
+    color: rgb(107, 107, 107);
+    margin-bottom: 80px;
+    max-width: 700px;
+    font-size: 20px;
+}
+
+.title, .subtitle {
+    color: black;
 }
 
 .subtitle {
-    font-weight: lighter;
-}
-
-.title, .subtitle, .description {
-    color: rgb(48, 48, 48);
+    font-weight: 600;
+    span {
+        margin-left: 10px;
+        background-color: rgb(227, 231, 233);
+        color: rgb(0, 0, 78);
+        padding: 5px;
+        border-radius: 5px;
+        font-size: 13px;
+    }
 }
 
 hr {
@@ -59,11 +77,15 @@ hr {
 
 body {
     display: flex;
-    justify-content: center;
-    align-items: center;
+    justify-content: flex-start;
+    align-items: stretch;
     flex-direction: column;
-    font-family: Arial, Helvetica, sans-serif;
-    margin: 40px;
-    background-color: beige;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin: 20px 40px 40px 40px;
     min-height: 100vh;
+}
+
+html {
+    background: rgb(255,255,255);
+    background: linear-gradient(50deg, rgba(255,255,255,1) 30%, rgba(235,244,245,1) 53%, rgba(233,243,244,1) 79%, rgba(181,198,224,1) 100%);
 }
