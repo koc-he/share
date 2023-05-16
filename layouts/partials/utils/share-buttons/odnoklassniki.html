@@ -1,7 +1,12 @@
+{{ $imageUrl := partial "utils/share-buttons/image-url.html" . }}
+
+{{ $query := querify "url" .Permalink "title" .Title "description" (truncate 40 ( or .Description .Summary )) "imageUrl" $imageUrl }}
+{{ $link := printf "https://connect.ok.ru/offer?%s" $query }}
+
 {{ .Scratch.SetInMap "data"  "label" "Odnoklassniki" }}
 {{ .Scratch.SetInMap "data"  "buttonClass" "odnoklassniki" }}
 {{ .Scratch.SetInMap "data"  "image" "odnoklassniki" }}
-{{ .Scratch.SetInMap "data"  "link" "/" }}
+{{ .Scratch.SetInMap "data"  "link" $link }}
 {{ .Scratch.SetInMap "data"  "ariaLabel" "Share to Odnoklassniki" }}
 
 {{ partial "utils/share-buttons/button.html" . }}

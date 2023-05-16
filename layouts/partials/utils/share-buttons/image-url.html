@@ -1,0 +1,6 @@
+{{ $imageUrl := "" }}
+{{ if .Param "images" }}
+    {{ $imageUrl = printf "%s%s" .Site.BaseURL (index .Params.images 0) }}
+{{ end }}
+
+{{ return $imageUrl }}
