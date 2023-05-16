@@ -1,7 +1,10 @@
+{{ $query := querify "url" .Permalink "title" .Title }}
+{{ $link := printf "https://b.hatena.ne.jp/add?mode=confirm&%s" $query }}
+
 {{ .Scratch.SetInMap "data" "label" "Hatena" }}
 {{ .Scratch.SetInMap "data"  "buttonClass" "hatena" }} 
 {{ .Scratch.SetInMap "data"  "image" "hatena" }}
-{{ .Scratch.SetInMap "data"  "link" "/" }}
+{{ .Scratch.SetInMap "data"  "link" $link }}
 {{ .Scratch.SetInMap "data"  "ariaLabel" "Share to Hatena" }}
 
 {{ partial "utils/share-buttons/button.html" . }}
