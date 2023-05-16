@@ -1,4 +1,4 @@
-{{ $query := querify "u" .Permalink "quote" (or .Description .Summary ) "hashtag" ( or .Params.share.facebook.hashtag "" ) }}
+{{ $query := querify "u" .Permalink "quote" (truncate 40 (or .Description .Summary )) "hashtag" ( or .Params.share.facebook.hashtag "" ) }}
 {{ $link := printf "https://www.facebook.com/sharer/sharer.php?%s" $query }}
 
 {{ .Scratch.SetInMap "data"  "label" "Facebook" }}

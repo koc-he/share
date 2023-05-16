@@ -1,5 +1,5 @@
 {{ $query := querify "url" .Permalink "title" .Title }}
-{{ $link := printf "https://b.hatena.ne.jp/add?mode=confirm&%s" $query }}
+{{ $link := printf "http://b.hatena.ne.jp/add?mode=confirm&%s" $query }}
 
 {{ .Scratch.SetInMap "data" "label" "Hatena" }}
 {{ .Scratch.SetInMap "data"  "buttonClass" "hatena" }} 

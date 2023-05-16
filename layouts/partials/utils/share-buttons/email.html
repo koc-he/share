@@ -1,4 +1,4 @@
-{{ $body := printf "%s\n\nurl: %s" (or .Description .Summary) .Permalink }}
+{{ $body := printf "%s\n\nurl: %s" (truncate 40 (or .Description .Summary)) .Permalink }}
 
 {{ $mailToParams := querify "subject" .Title "body" $body }}
 
