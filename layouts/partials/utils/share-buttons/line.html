@@ -1,7 +1,10 @@
+{{ $query := querify "url" .Permalink "text" (truncate 40 ( or .Description .Summary )) }}
+{{ $link := printf "https://social-plugins.line.me/lineit/share?%s" $query }}
+
 {{ .Scratch.SetInMap "data"  "label" "Line" }}
 {{ .Scratch.SetInMap "data"  "buttonClass" "line" }}
 {{ .Scratch.SetInMap "data"  "image" "line" }}
-{{ .Scratch.SetInMap "data"  "link" "/" }}
+{{ .Scratch.SetInMap "data"  "link" $link }}
 {{ .Scratch.SetInMap "data"  "ariaLabel" "Share to Line" }}
 
 {{ partial "utils/share-buttons/button.html" . }}
