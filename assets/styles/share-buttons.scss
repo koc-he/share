@@ -2,12 +2,6 @@
     display: flex;
 }
 
-svg {
-    width: 25px;
-    height: auto;
-    max-height: 25px;
-}
-
 .share-buttons {
     display: flex;
     flex-wrap: wrap;
@@ -36,13 +30,18 @@ svg {
         width: 32px;
     }
 
-    &.with-text {
+    &.with-label {
         max-width: 220px;
         width: auto;
         height: 28px;
         gap: 10px;
         flex-shrink: 1;
         padding: 3px 8px; 
+
+        svg {
+            width: 20px;
+            max-height: 20px;
+        }
     }
 
     &:hover, &:active {
@@ -57,6 +56,12 @@ svg {
         margin: 0;
         font-weight: normal;
     }
+
+    svg {
+        width: 25px;
+        height: auto;
+        max-height: 25px;
+    }    
 }
 
 .email { background-color: #02275f; }

@@ -27,12 +27,12 @@
         {{ $round = .context.round }}
     {{ end }}
 
-    <a href="{{ .link }}" class="share-button {{ .buttonClass }} {{ if $withLabel }} with-text {{ else if $round }} round {{ end }}" aria-label="{{.ariaLabel}}">
-        {{ readFile ( printf "static/share-buttons/%s.svg" .image ) | safeHTML }}
+    <a href="{{ .link }}" class="share-button {{ .buttonClass }} {{ if $withLabel }} with-label {{ else if $round }} round {{ end }}" aria-label="{{.ariaLabel}}">
         {{ if $withLabel }} 
         <h4>
             {{ .label }}
         </h4>
         {{ end }}
+        {{ readFile ( printf "static/share-buttons/%s.svg" .image ) | safeHTML }}
     </a>
 </div>
