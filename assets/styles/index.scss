@@ -1,6 +1,5 @@
 .container {
     display: flex;
-    margin: auto;
     gap: 30px;
     margin-bottom: 70px;
     justify-content: center;
@@ -47,8 +46,8 @@
 }
 
 hr {
-    min-width: 50vw;
     margin-top: 2em;
+    width: 100px;
 }
 
 body {
@@ -59,4 +58,5 @@ body {
     font-family: Arial, Helvetica, sans-serif;
     margin: 40px;
     background-color: beige;
+    min-height: 100vh;
 }

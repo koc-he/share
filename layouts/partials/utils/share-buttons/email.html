@@ -1,2 +1,21 @@
-{{ $emailData := dict "context" .  "label" "Email" "buttonClass" "email" "image" "email" "link" "/" "ariaLabel" "Share with email" }}
+{{ $useParam := eq (printf "%T" .) "*hugolib.pageState" }}
+{{ $subject := "" }}
+{{ $body := "" }}
+{{ $url := "" }}
+
+{{ if $useParam }}
+    {{ $subject = .Title }}
+    {{ $body = or .Summary .Description }}
+    {{ $url = .Permalink }}
+{{ else }}
+    {{ $subject = .context.Title }}
+    {{ $body = or .context.Summary .context.Description }}
+    {{ $url = .context.Permalink }}
+{{ end }}
+
+{{ $body = printf "%s\n\nurl: %s" $body $url }}
+
+{{ $mailToParams := querify "subject" $subject "body" $body }}
+{{ $link := printf "mailto:?%s" $mailToParams }}
+{{ $emailData := dict "context" .  "label" "Email" "buttonClass" "email" "image" "email" "link" $link "ariaLabel" "Share with email" }}
 {{ partial "utils/share-buttons/button.html" $emailData }}
