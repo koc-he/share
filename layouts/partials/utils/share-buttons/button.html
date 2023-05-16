@@ -2,8 +2,25 @@
 {{ $round := or (.Scratch.Get "round") false }}
 {{ $data := .Scratch.Get "data" }}
 
+{{ $windowHeight := or .Site.Params.window.height 500 }}
+{{ $windowWidth := or .Site.Params.window.width 500 }}
+{{ $popup := or .Site.Params.share.popup false }}
+
+{{ $popupValues := printf "popup,width=%v,height=%v" $windowWidth $windowHeight }}
+{{ $popupCmd := printf "window.open(this.href, 'new', '%s'); return false;" $popupValues }}
+
 <div class="share-button-container">
-    <a href="{{ $data.link }}" class="share-button {{ $data.buttonClass }} {{ if $withLabel }} with-label {{ else if $round }} round {{ end }}" aria-label="{{$data.ariaLabel}}">
+    <a 
+        href="{{ $data.link }}" 
+        class="share-button {{ $data.buttonClass }} {{ if $withLabel }} with-label {{ else if $round }} round {{ end }}" 
+        aria-label="{{$data.ariaLabel}}"
+        {{ if $popup }}
+        onclick="window.open(this.href, 'new', {{$popupValues}}); return false;"
+        {{ else }}
+        target="_blank" 
+        rel="noopener noreferrer"
+        {{ end }}
+    >
         {{ if $withLabel }} 
         <h4>
             {{ $data.label }}

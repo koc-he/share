@@ -1,5 +1,5 @@
-{{ $appId := .Site.Params.share.facebook.appId}}
-{{ $redirectUri := or .Params.share.facebook.redirectUri .Permalink }}
+{{ $appId := .Site.Params.share.facebookMessenger.appId }}
+{{ $redirectUri := or .Params.share.facebookMessenger.redirectUri .Permalink }}
 
 {{ $query := querify "url" .Permalink "redirect_uri" $redirectUri "app_id" $appId }}
 {{ $link := printf "https://www.facebook.com/dialog/send?%s" $query }}
