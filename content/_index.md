@@ -5,6 +5,8 @@ draft: false
 share:
     facebook:
         redirectUri: 'http://localhost:1313'
+images:
+    - 'share.svg'
 ---
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras vitae lacus sit amet arcu interdum egestas sed quis turpis. Duis vestibulum elementum quam, in rhoncus mi condimentum sit amet. Vestibulum pulvinar fermentum sapien, ut tempor dolor lobortis vel. Mauris bibendum finibus elementum. Maecenas finibus efficitur enim ut accumsan. Sed turpis erat, ultricies nec ornare eu, consequat non sapien. Nam varius nibh nisl, in convallis diam tincidunt ac. Sed varius auctor lacinia. Cras ac neque erat.
