@@ -1,2 +1,7 @@
-{{ $mailRuData := dict "context" .  "label" "Mail.ru" "buttonClass" "mail-ru" "image" "mail-ru" "link" "/" "ariaLabel" "Share to Mail.ru" }}
-{{ partial "utils/share-buttons/button.html" $mailRuData }}
+{{ .Scratch.SetInMap "data"  "label" "Mail.ru" }}
+{{ .Scratch.SetInMap "data"  "buttonClass" "mail-ru" }}
+{{ .Scratch.SetInMap "data"  "image" "mail-ru" }}
+{{ .Scratch.SetInMap "data"  "link" "/" }}
+{{ .Scratch.SetInMap "data"  "ariaLabel" "Share to Mail.ru" }}
+
+{{ partial "utils/share-buttons/button.html" . }}

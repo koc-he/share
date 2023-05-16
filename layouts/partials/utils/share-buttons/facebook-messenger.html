@@ -1,2 +1,9 @@
-{{ $fmData := dict "context" .  "label" "Facebook Messenger" "buttonClass" "facebook-messenger" "image" "facebook-messenger" "link" "/" "ariaLabel" "Share to Facebook Messenger" }}
-{{ partial "utils/share-buttons/button.html" $fmData }}
+{{.Site.Params.share.facebook.appId}}
+
+{{ .Scratch.SetInMap "data" "label" "Facebook Messenger" }}
+{{ .Scratch.SetInMap "data" "buttonClass" "facebook-messenger" }} 
+{{ .Scratch.SetInMap "data" "image" "facebook-messenger" }}
+{{ .Scratch.SetInMap "data" "link" "/" }}
+{{ .Scratch.SetInMap "data" "ariaLabel" "Share to Facebook Messenger" }}
+
+{{ partial "utils/share-buttons/button.html" . }}

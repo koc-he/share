@@ -1,2 +1,7 @@
-{{ $redditData := dict "context" .  "label" "Reddit" "buttonClass" "reddit" "image" "reddit" "link" "/" "ariaLabel" "Share to Reddit" }}
-{{ partial "utils/share-buttons/button.html" $redditData }}
+{{ .Scratch.SetInMap "data"  "label" "Reddit" }}
+{{ .Scratch.SetInMap "data"  "buttonClass" "reddit" }} 
+{{ .Scratch.SetInMap "data"  "image" "reddit" }}
+{{ .Scratch.SetInMap "data"  "link" "/" }}
+{{ .Scratch.SetInMap "data"  "ariaLabel" "Share to Reddit" }}
+
+{{ partial "utils/share-buttons/button.html" . }}

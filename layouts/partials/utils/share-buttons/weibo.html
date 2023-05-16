@@ -1,2 +1,7 @@
-{{ $weiboData := dict "context" .  "label" "Weibo" "buttonClass" "weibo" "image" "weibo" "link" "/" "ariaLabel" "Share to Weibo" }}
-{{ partial "utils/share-buttons/button.html" $weiboData }}
+{{ .Scratch.SetInMap "data"  "label" "Weibo" }}
+{{ .Scratch.SetInMap "data"  "buttonClass" "weibo" }} 
+{{ .Scratch.SetInMap "data"  "image" "weibo" }}
+{{ .Scratch.SetInMap "data"  "link" "/" }}
+{{ .Scratch.SetInMap "data"  "ariaLabel" "Share to Weibo" }}
+
+{{ partial "utils/share-buttons/button.html" . }}

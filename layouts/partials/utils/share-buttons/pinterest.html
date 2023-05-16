@@ -1,2 +1,7 @@
-{{ $pinterestData := dict "context" .  "label" "Pinterest" "buttonClass" "pinterest" "image" "pinterest" "link" "/" "ariaLabel" "Share to Pinterest" }}
-{{ partial "utils/share-buttons/button.html" $pinterestData }}
+{{ .Scratch.SetInMap "data" "label" "Pinterest" }}
+{{ .Scratch.SetInMap "data"  "buttonClass" "pinterest" }}
+{{ .Scratch.SetInMap "data"  "image" "pinterest" }}
+{{ .Scratch.SetInMap "data"  "link" "/" }}
+{{ .Scratch.SetInMap "data"  "ariaLabel" "Share to Pinterest" }}
+
+{{ partial "utils/share-buttons/button.html" . }}

@@ -1,2 +1,7 @@
-{{ $pocketData := dict "context" .  "label" "Pocket" "buttonClass" "pocket" "image" "pocket" "link" "/" "ariaLabel" "Share to Pocket" }}
-{{ partial "utils/share-buttons/button.html" $pocketData }}
+{{ .Scratch.SetInMap "data"  "label" "Pocket" }}
+{{ .Scratch.SetInMap "data"  "buttonClass" "pocket" }}
+{{ .Scratch.SetInMap "data"  "image" "pocket" }}
+{{ .Scratch.SetInMap "data"  "link" "/" }}
+{{ .Scratch.SetInMap "data"  "ariaLabel" "Share to Pocket" }}
+
+{{ partial "utils/share-buttons/button.html" . }}

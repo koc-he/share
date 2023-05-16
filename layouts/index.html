@@ -14,14 +14,17 @@
     <hr>
     <h2 class="subtitle">With Labels</h2>
     <div class="container">
-        {{ partial "utils/share-buttons/index.html" ( dict "context" . "withLabel" true ) }}
+        {{ .Scratch.Set "withLabel" true }}
+        {{ partial "utils/share-buttons/index.html" . }}
     </div>
     <h2 class="subtitle">Square Labelless</h2>
     <div class="container">
+        {{ .Scratch.Set "withLabel" false }}
         {{ partial "utils/share-buttons/index.html" . }}
     </div>
     <h2 class="subtitle">Round Labelless</h2>
     <div class="container">
-        {{ partial "utils/share-buttons/index.html" ( dict "context" . "round" true ) }}
+        {{ .Scratch.Set "round" true }}
+        {{ partial "utils/share-buttons/index.html" . }}
     </div>
 {{ end }}

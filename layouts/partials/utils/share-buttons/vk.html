@@ -1,2 +1,7 @@
-{{ $vkData := dict "context" .  "label" "VK" "buttonClass" "vk" "image" "vk" "link" "/" "ariaLabel" "Share to VK" }}
-{{ partial "utils/share-buttons/button.html" $vkData }}
+{{ .Scratch.SetInMap "data"  "label" "VK" }}
+{{ .Scratch.SetInMap "data"  "buttonClass" "vk" }} 
+{{ .Scratch.SetInMap "data"  "image" "vk" }}
+{{ .Scratch.SetInMap "data"  "link" "/" }}
+{{ .Scratch.SetInMap "data"  "ariaLabel" "Share to VK" }}
+
+{{ partial "utils/share-buttons/button.html" . }}

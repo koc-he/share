@@ -1,2 +1,7 @@
-{{ $tumblrData := dict "context" .  "label" "Tumblr" "buttonClass" "tumblr" "image" "tumblr" "link" "/" "ariaLabel" "Share to Tumblr" }}
-{{ partial "utils/share-buttons/button.html" $tumblrData }}
+{{ .Scratch.SetInMap "data"  "label" "Tumblr" }}
+{{ .Scratch.SetInMap "data"  "buttonClass" "tumblr" }}
+{{ .Scratch.SetInMap "data"  "image" "tumblr" }}
+{{ .Scratch.SetInMap "data"  "link" "/" }}
+{{ .Scratch.SetInMap "data"  "ariaLabel" "Share to Tumblr" }}
+
+{{ partial "utils/share-buttons/button.html" . }}

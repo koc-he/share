@@ -1,2 +1,7 @@
-{{ $workplaceData := dict "context" .  "label" "Workplace" "buttonClass" "workplace" "image" "workplace" "link" "/" "ariaLabel" "Share to Workplace" }}
-{{ partial "utils/share-buttons/button.html" $workplaceData }}
+{{ .Scratch.SetInMap "data"  "label" "Workplace" }}
+{{ .Scratch.SetInMap "data"  "buttonClass" "workplace" }} 
+{{ .Scratch.SetInMap "data"  "image" "workplace" }}
+{{ .Scratch.SetInMap "data"  "link" "/" }}
+{{ .Scratch.SetInMap "data"  "ariaLabel" "Share to Workplace" }}
+
+{{ partial "utils/share-buttons/button.html" . }}

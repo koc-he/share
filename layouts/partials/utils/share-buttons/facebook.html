@@ -1,2 +1,7 @@
-{{ $fbData := dict "context" .  "label" "Facebook" "buttonClass" "facebook" "image" "facebook" "link" "/" "ariaLabel" "Share to Facebook" }}
-{{ partial "utils/share-buttons/button.html" $fbData }}
+{{ .Scratch.SetInMap "data"  "label" "Facebook" }}
+{{ .Scratch.SetInMap "data"  "buttonClass" "facebook" }}
+{{ .Scratch.SetInMap "data"  "image" "facebook" }}
+{{ .Scratch.SetInMap "data"  "link" "/" }}
+{{ .Scratch.SetInMap "data"  "ariaLabel" "Share to Facebook" }}
+
+{{ partial "utils/share-buttons/button.html" . }}

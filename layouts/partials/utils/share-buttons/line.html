@@ -1,2 +1,7 @@
-{{ $lineData := dict "context" .  "label" "Line" "buttonClass" "line" "image" "line" "link" "/" "ariaLabel" "Share to Line" }}
-{{ partial "utils/share-buttons/button.html" $lineData }}
+{{ .Scratch.SetInMap "data"  "label" "Line" }}
+{{ .Scratch.SetInMap "data"  "buttonClass" "line" }}
+{{ .Scratch.SetInMap "data"  "image" "line" }}
+{{ .Scratch.SetInMap "data"  "link" "/" }}
+{{ .Scratch.SetInMap "data"  "ariaLabel" "Share to Line" }}
+
+{{ partial "utils/share-buttons/button.html" . }}

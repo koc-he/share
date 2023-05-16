@@ -1,2 +1,7 @@
-{{ $hatenaData := dict "context" .  "label" "Hatena" "buttonClass" "hatena" "image" "hatena" "link" "/" "ariaLabel" "Share to Hatena" }}
-{{ partial "utils/share-buttons/button.html" $hatenaData }}
+{{ .Scratch.SetInMap "data" "label" "Hatena" }}
+{{ .Scratch.SetInMap "data"  "buttonClass" "hatena" }} 
+{{ .Scratch.SetInMap "data"  "image" "hatena" }}
+{{ .Scratch.SetInMap "data"  "link" "/" }}
+{{ .Scratch.SetInMap "data"  "ariaLabel" "Share to Hatena" }}
+
+{{ partial "utils/share-buttons/button.html" . }}

@@ -1,2 +1,7 @@
-{{ $twitterData := dict "context" .  "label" "Twitter" "buttonClass" "twitter" "image" "twitter" "link" "/" "ariaLabel" "Share to Odnoklassniki" }}
-{{ partial "utils/share-buttons/button.html" $twitterData }}
+{{ .Scratch.SetInMap "data"  "label" "Twitter" }}
+{{ .Scratch.SetInMap "data"  "buttonClass" "twitter" }} 
+{{ .Scratch.SetInMap "data"  "image" "twitter" }}
+{{ .Scratch.SetInMap "data"  "link" "/" }}
+{{ .Scratch.SetInMap "data"  "ariaLabel" "Share to Odnoklassniki" }}
+
+{{ partial "utils/share-buttons/button.html" . }}

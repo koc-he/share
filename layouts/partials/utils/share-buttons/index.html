@@ -1,101 +1,16 @@
-<div class="share-buttons">
-    {{ $useParam := eq (printf "%T" .) "*hugolib.pageState" }}
+<div class="share-buttons">    
     {{ $all := false }}
-    {{ $isAllSet := false }}
-    {{ if $useParam }}
-        {{ $isAllSet = .Param "all" }}
-    {{ else }}
-        {{ $isAllSet = isset . "all" }}
+    
+    {{ if eq ( .Param "enabled" ) nil }}
+    {{ $all = true }}
     {{ end }}
 
-    {{ if $isAllSet }}
-        {{ $all = .all }}
-    {{ else }}
-        {{ $all = true }}
-    {{ end }}
+    {{ $smButtons := slice "email" "facebook-messenger" "facebook" "hatena" "instapaper" "line" "linkedin" "live-journal" "mail-ru" "odnoklassniki" "pinterest" "pocket" "reddit" "telegram" "tumblr" "twitter" "viber" "vk" "weibo" "whatsapp" "workplace" }}   
     
-    {{ if or $all (in .enabled "email") }}
-        {{ partial "utils/share-buttons/email.html" . }}
+    {{ $context := . }}
+    {{ range $smb := $smButtons }}
+        {{ if or $all ( in .enabled $smb ) }}
+            {{ partial (printf "utils/share-buttons/%s.html" $smb ) $context }}
+        {{ end }}
     {{ end }}
-    
-    {{ if or $all (in .enabled "facebook-messenger") }}
-        {{ partial "utils/share-buttons/facebook-messenger.html" . }}
-    {{ end }}
-    
-    {{ if or $all (in .enabled "facebook") }}
-        {{ partial "utils/share-buttons/facebook.html" . }}
-    {{ end }}
-    
-    {{ if or $all (in .enabled "hatena") }}
-        {{ partial "utils/share-buttons/hatena.html" . }}
-    {{ end }}
-    
-    {{ if or $all (in .enabled "instapaper") }}
-        {{ partial "utils/share-buttons/instapaper.html" . }}
-    {{ end }}
-    
-    {{ if or $all (in .enabled "line") }}
-        {{ partial "utils/share-buttons/line.html" . }}
-    {{ end }}
-    
-    {{ if or $all (in .enabled "linkedin") }}
-        {{ partial "utils/share-buttons/linkedin.html" . }}
-    {{ end }}
-    
-    {{ if or $all (in .enabled "live-journal") }}
-        {{ partial "utils/share-buttons/live-journal.html" . }}
-    {{ end }}
-    
-    {{ if or $all (in .enabled "mail-ru") }}
-        {{ partial "utils/share-buttons/mail-ru.html" . }}
-    {{ end }}
-    
-    {{ if or $all (in .enabled "odnoklassniki") }}
-        {{ partial "utils/share-buttons/odnoklassniki.html" . }}
-    {{ end }}
-    
-    {{ if or $all (in .enabled "pinterest") }}
-        {{ partial "utils/share-buttons/pinterest.html" . }}
-    {{ end }}
-    
-    {{ if or $all (in .enabled "pocket") }}
-        {{ partial "utils/share-buttons/pocket.html" . }}
-    {{ end }}
-    
-    {{ if or $all (in .enabled "reddit") }}
-        {{ partial "utils/share-buttons/reddit.html" . }}
-    {{ end }}
-    
-    {{ if or $all (in .enabled "telegram") }}
-        {{ partial "utils/share-buttons/telegram.html" . }}
-    {{ end }}
-    
-    {{ if or $all (in .enabled "tumblr") }}
-        {{ partial "utils/share-buttons/tumblr.html" . }}
-    {{ end }}
-    
-    {{ if or $all (in .enabled "twitter") }}
-        {{ partial "utils/share-buttons/twitter.html" . }}
-    {{ end }}
-    
-    {{ if or $all (in .enabled "viber") }}
-        {{ partial "utils/share-buttons/viber.html" . }}
-    {{ end }}
-    
-    {{ if or $all (in .enabled "vk") }}
-        {{ partial "utils/share-buttons/vk.html" . }}
-    {{ end }}
-    
-    {{ if or $all (in .enabled "weibo") }}
-        {{ partial "utils/share-buttons/weibo.html" . }}
-    {{ end }}
-    
-    {{ if or $all (in .enabled "whatsapp") }}
-        {{ partial "utils/share-buttons/whatsapp.html" . }}
-    {{ end }}
-    
-    {{ if or $all (in .enabled "workplace") }}
-        {{ partial "utils/share-buttons/workplace.html" . }}
-    {{ end }}
-    
 </div>
