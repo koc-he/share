@@ -3,3 +3,7 @@ languageCode = 'en-us'
 title = 'Share'
 description = 'Social media share buttons for Hugo'
 
+[params]
+    [params.share]
+        [params.share.facebook]
+            appId = '12345678'
