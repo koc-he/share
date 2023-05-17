@@ -23,7 +23,8 @@
     <p class="subtitle">
         Rectangular
         <span>With Labels</span>
-        <span>Brand Colour</span>
+        <span>Brand Colours</span>
+        <span>All Buttons</span>
     </p>
     <div class="container">
         {{ .Scratch.Set "withLabel" true }}
@@ -32,7 +33,8 @@
     <p class="subtitle">
         Square
         <span>Labelless</span>
-        <span>Brand Colour</span>
+        <span>Brand Colours</span>
+        <span>All Buttons</span>
     </p>
     <div class="container">
         {{ .Scratch.Set "withLabel" false }}
@@ -41,7 +43,8 @@
     <p class="subtitle">
         Round
         <span>Labelless</span>
-        <span>Brand Colour</span>
+        <span>Brand Colours</span>
+        <span>All Buttons</span>
     </p>
     <div class="container">
         {{ .Scratch.Set "round" true }}
@@ -51,6 +54,7 @@
         Rectangular
         <span>With Labels</span>
         <span>Matching Colour</span>
+        <span>All Buttons</span>
     </p>
     <div class="container">
         {{ .Scratch.Set "withLabel" true }}
@@ -64,6 +68,7 @@
         Square
         <span>Labelless</span>
         <span>Matching Colour</span>
+        <span>All Buttons</span>
     </p>
     <div class="container">
         {{ .Scratch.Set "withLabel" false }}
@@ -74,9 +79,22 @@
         Round
         <span>Labelless</span>
         <span>Matching Colour</span>
+        <span>All Buttons</span>
     </p>
     <div class="container">
         {{ .Scratch.Set "round" true }}
+        {{ partial "utils/share-buttons/index.html" . }}
+    </div>
+    <p class="subtitle">
+        Rectangular
+        <span>Select Buttons</span>
+        <span>With Labels</span>
+        <span>Brand Colours</span>
+    </p>
+    <div class="container">
+        {{ partial "utils/share-buttons/helpers/reset.html" . }}
+        {{ .Scratch.Set "withLabel" true }}
+        {{ .Scratch.Set "enabled" (slice "email" "twitter" "linkedin" "facebook" "reddit" "whatsapp" "pinterest") }}
         {{ partial "utils/share-buttons/index.html" . }}
     </div>
 {{ end }}
