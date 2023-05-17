@@ -1,7 +1,8 @@
 <div class="share-buttons">    
     {{ $all := false }}
-    
-    {{ if eq ( .Param "enabled" ) nil }}
+    {{ $enabled := or (.Scratch.Get "enabled") slice }}
+
+    {{ if eq (len $enabled) 0 }}
     {{ $all = true }}
     {{ end }}
 
@@ -9,7 +10,7 @@
     
     {{ $context := . }}
     {{ range $smb := $smButtons }}
-        {{ if or $all ( in .enabled $smb ) }}
+        {{ if or $all ( in $enabled $smb ) }}
             {{ partial (printf "utils/share-buttons/%s.html" $smb ) $context }}
         {{ end }}
     {{ end }}
