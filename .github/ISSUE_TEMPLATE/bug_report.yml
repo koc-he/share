@@ -48,7 +48,7 @@ body:
     id: version
     attributes:
       label: Version
-      description: What version are you using?
+      description: What version of Share are you using?
       options:
         - 0.0.1 (Default)
     validations:
