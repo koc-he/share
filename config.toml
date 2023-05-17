@@ -11,3 +11,6 @@ description = 'Social media share buttons for Hugo.'
             width = 500
         [params.share.facebookMessenger]
             appId = '12345678'
+        [params.share.twitter]
+            accountHandle = 'twitterdev'
+            relatedAccounts = ['twitter']

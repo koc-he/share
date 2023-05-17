@@ -1,8 +1,8 @@
-{{ $tags := partial "utils/share-buttons/helpers/get-tags.html" (dict "tags" ( or .Params.share.tumblr.tags slice ) "useHashtag" false) }}
+{{ $tags := partial "utils/share-buttons/helpers/get-tags.html" (dict "tags" ( or .Params.share.tags slice ) "useHashtag" false) }}
 
 {{ $query := querify "canonicalUrl" .Permalink "title" .Title "posttype" "link" "caption"  (truncate 40 ( or .Description .Summary )) "tags" $tags }}
 {{ $link := printf "https://www.tumblr.com/widgets/share/tool?%s" $query }}
-{{$link}}
+
 {{ .Scratch.SetInMap "data"  "label" "Tumblr" }}
 {{ .Scratch.SetInMap "data"  "buttonClass" "tumblr" }}
 {{ .Scratch.SetInMap "data"  "image" "tumblr" }}

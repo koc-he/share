@@ -1,7 +1,12 @@
+{{ $tags := partial "utils/share-buttons/helpers/get-tags.html" (dict "tags" ( or .Params.share.tags slice ) "useHashtag" true) }}
+
+{{ $query := querify "url" .Permalink "text" .Title "hashtags" $tags "via" (or .Site.Params.share.twitter.accountHandle "") "related" (delimit (or .Site.Params.share.twitter.relatedAccounts slice) ",") }}
+{{ $link := printf "https://twitter.com/share?%s" $query }}
+
 {{ .Scratch.SetInMap "data"  "label" "Twitter" }}
 {{ .Scratch.SetInMap "data"  "buttonClass" "twitter" }} 
 {{ .Scratch.SetInMap "data"  "image" "twitter" }}
-{{ .Scratch.SetInMap "data"  "link" "/" }}
+{{ .Scratch.SetInMap "data"  "link" $link }}
 {{ .Scratch.SetInMap "data"  "ariaLabel" "Share to Odnoklassniki" }}
 
 {{ partial "utils/share-buttons/button.html" . }}
