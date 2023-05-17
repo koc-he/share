@@ -5,6 +5,9 @@ draft: false
 share:
     facebook:
         redirectUri: 'http://localhost:1313'
+        hashtag: lorem
+    workplace:
+        hashtag: lorem
     tags:
         - lorem
         - ipsum

@@ -1,7 +1,10 @@
+{{ $query := querify "u" .Permalink "quote" .Title "hashtag" ( or .Params.share.workplace.hashtag "" ) }}
+{{ $link := printf "https://work.facebook.com/sharer.php?%s" $query }}
+
 {{ .Scratch.SetInMap "data"  "label" "Workplace" }}
 {{ .Scratch.SetInMap "data"  "buttonClass" "workplace" }} 
 {{ .Scratch.SetInMap "data"  "image" "workplace" }}
-{{ .Scratch.SetInMap "data"  "link" "/" }}
+{{ .Scratch.SetInMap "data"  "link" $link }}
 {{ .Scratch.SetInMap "data"  "ariaLabel" "Share to Workplace" }}
 
 {{ partial "utils/share-buttons/button.html" . }}
