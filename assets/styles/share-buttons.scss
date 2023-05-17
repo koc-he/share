@@ -86,3 +86,13 @@
 .whatsapp { background-color: #25D366; }
 .workplace { background-color: #3b3d4a; }
 
+
+.matching {
+    background-color: var(--match-bg);
+    color: var(--match-color);
+
+    &:hover, &:active {
+        background-color: var(--match-active-bg);
+        color: var(--match-active-color);
+    }
+}

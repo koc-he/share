@@ -10,19 +10,29 @@
 
     <div class="title-container">
         <h1 class="title">share: social media share buttons for hugo.</h1>
+        <p class="description">
+            This module facilates the sharing of content from Hugo websites on social platforms. After adding it to your site, you can add share buttons for popular social media platforms like Facebook, Twitter, Pinterest, and more.
+        </p>
     </div>
+
+    <p class="section-label">STRAIGHTFORWARD</p>
+    <h1 class="section-title">Minimal Configuration</h1>
     <p class="description">
-        This module facilates the sharing of content from Hugo websites on social platforms. After adding it to your site, you can add share buttons for popular social media platforms like Facebook, Twitter, Pinterest, and more.
+        Very little to no configuration is needed. The module sets sharing information for your content based on site and page variables. Only some platforms may require minimal configuration in cases where information is not available from the aforementioned variables. 
     </p>
     <p class="subtitle">
-        Rectangular<span>With Labels</span>
+        Rectangular
+        <span>With Labels</span>
+        <span>Brand Colour</span>
     </p>
     <div class="container">
         {{ .Scratch.Set "withLabel" true }}
         {{ partial "utils/share-buttons/index.html" . }}
     </div>
     <p class="subtitle">
-        Square<span>Labelless</span>
+        Square
+        <span>Labelless</span>
+        <span>Brand Colour</span>
     </p>
     <div class="container">
         {{ .Scratch.Set "withLabel" false }}
@@ -31,6 +41,39 @@
     <p class="subtitle">
         Round
         <span>Labelless</span>
+        <span>Brand Colour</span>
+    </p>
+    <div class="container">
+        {{ .Scratch.Set "round" true }}
+        {{ partial "utils/share-buttons/index.html" . }}
+    </div>
+    <p class="subtitle">
+        Rectangular
+        <span>With Labels</span>
+        <span>Matching Colour</span>
+    </p>
+    <div class="container">
+        {{ .Scratch.Set "withLabel" true }}
+        {{ .Scratch.Set "background" "#aab2ff" }}
+        {{ .Scratch.Set "color" "#112A46" }}
+        {{ .Scratch.Set "activeBackground" "#ffffff" }}
+        {{ .Scratch.Set "activeColor" "#000000" }}
+        {{ partial "utils/share-buttons/index.html" . }}
+    </div>
+    <p class="subtitle">
+        Square
+        <span>Labelless</span>
+        <span>Matching Colour</span>
+    </p>
+    <div class="container">
+        {{ .Scratch.Set "withLabel" false }}
+        {{ .Scratch.Set "round" false }}
+        {{ partial "utils/share-buttons/index.html" . }}
+    </div>
+    <p class="subtitle">
+        Round
+        <span>Labelless</span>
+        <span>Matching Colour</span>
     </p>
     <div class="container">
         {{ .Scratch.Set "round" true }}

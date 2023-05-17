@@ -9,10 +9,20 @@
 {{ $popupValues := printf "popup,width=%v,height=%v" $windowWidth $windowHeight }}
 {{ $popupCmd := printf "window.open(this.href, 'new', '%s'); return false;" $popupValues }}
 
+{{ $background := .Scratch.Get "background" }}
+{{ $color := .Scratch.Get "color" }}
+{{ $activeBackground := .Scratch.Get "activeBackground" }}
+{{ $activeColor := .Scratch.Get "activeColor" }}
+{{ $isMatching := and (and $background $color) (and $activeBackground $activeColor) }}
+
 <div class="share-button-container">
     <a 
         href="{{ $data.link }}" 
-        class="share-button {{ $data.buttonClass }} {{ if $withLabel }} with-label {{ else if $round }} round {{ end }}" 
+        {{ if $isMatching }}
+        {{ $styles := printf "--match-bg: %s; --match-color: %s; --match-active-bg: %s; --match-active-color: %s;" $background $color $activeBackground $activeColor }}
+        style="{{ $styles | safeCSS }}"
+        {{ end }}
+        class="share-button {{ $data.buttonClass }} {{ if $withLabel }} with-label {{ else if $round }} round {{ end }} {{ if $isMatching }}matching{{ end }}" 
         aria-label="{{$data.ariaLabel}}"
         {{ if $popup }}
         onclick="window.open(this.href, 'new', {{$popupValues}}); return false;"

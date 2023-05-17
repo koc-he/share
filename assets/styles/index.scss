@@ -35,9 +35,8 @@
 .title-container {
     margin-top: 20px;
     display: flex;
-    gap: 20px;
-    justify-content: flex-start;
-    align-items: center;
+    flex-direction: column;    
+    margin: 50px 0;
 }
 
 .title {
@@ -52,7 +51,7 @@
     margin: 0;
     color: rgb(107, 107, 107);
     margin-bottom: 80px;
-    max-width: 700px;
+    max-width: 850px;
     font-size: 20px;
 }
 
@@ -62,14 +61,26 @@
 
 .subtitle {
     font-weight: bold;
+
     span {
         margin-left: 10px;
         background-color: rgb(227, 231, 233);
         color: rgb(0, 0, 78);
-        padding: 5px;
+        padding: 2px 5px;
         border-radius: 5px;
         font-size: 13px;
     }
+}
+
+.section-title {
+    margin: 0;
+    font-weight: bolder;
+}
+
+.section-label {
+    color: #1157a7;
+    margin: 0;
+    font-weight: bolder;
 }
 
 hr {
