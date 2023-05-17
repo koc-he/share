@@ -17,7 +17,7 @@
 
 <div class="share-button-container">
     <a 
-        href="{{ $data.link }}" 
+        href="{{ $data.link | safeURL }}" 
         {{ if $isMatching }}
         {{ $styles := printf "--match-bg: %s; --match-color: %s; --match-active-bg: %s; --match-active-color: %s;" $background $color $activeBackground $activeColor }}
         style="{{ $styles | safeCSS }}"
