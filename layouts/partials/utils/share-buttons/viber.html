@@ -1,4 +1,4 @@
-{{ $query := querify "text" (printf "%s %s" .Title .Permalink) }}
+{{ $query := querify "text" ( printf "%s %s" .Title .Permalink ) }}
 {{ $link := printf "viber://forward?%s" $query }} 
 
 {{ .Scratch.SetInMap "data"  "label" "Viber" }}
