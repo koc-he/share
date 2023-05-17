@@ -96,9 +96,16 @@ body {
     font-family: 'Manrope', sans-serif;
     margin: 20px 40px 40px 40px;
     min-height: 100vh;
+    max-width: 1200px;
 }
 
 html {
     background: rgb(255,255,255);
     background: linear-gradient(50deg, rgba(255,255,255,1) 30%, rgba(235,244,245,1) 53%, rgba(233,243,244,1) 79%, rgba(181,198,224,1) 100%);
+}
+
+@media (min-width: 1201px) {
+    body {
+        margin: 20px auto 40px auto;
+    }
 }
