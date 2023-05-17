@@ -1,0 +1,10 @@
+{{ $query := querify "text" (printf "%s %s" .Title .Permalink) }}
+{{ $link := printf "viber://forward?%s" $query }} 
+
+{{ .Scratch.SetInMap "data"  "label" "Viber" }}
+{{ .Scratch.SetInMap "data"  "buttonClass" "viber" }} 
+{{ .Scratch.SetInMap "data"  "image" "viber" }}
+{{ .Scratch.SetInMap "data"  "link" $link }}
+{{ .Scratch.SetInMap "data"  "ariaLabel" "Share to Viber" }}
+
+{{ partial "utils/share-buttons/button.html" . }}

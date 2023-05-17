@@ -1,0 +1,12 @@
+{{ $tags := partial "utils/share-buttons/helpers/get-tags.html" (dict "tags" ( or .Params.share.tags slice ) "useHashtag" false) }}
+
+{{ $query := querify "canonicalUrl" .Permalink "title" .Title "posttype" "link" "caption"  (truncate 40 ( or .Description .Summary )) "tags" $tags }}
+{{ $link := printf "https://www.tumblr.com/widgets/share/tool?%s" $query }}
+
+{{ .Scratch.SetInMap "data"  "label" "Tumblr" }}
+{{ .Scratch.SetInMap "data"  "buttonClass" "tumblr" }}
+{{ .Scratch.SetInMap "data"  "image" "tumblr" }}
+{{ .Scratch.SetInMap "data"  "link" $link }}
+{{ .Scratch.SetInMap "data"  "ariaLabel" "Share to Tumblr" }}
+
+{{ partial "utils/share-buttons/button.html" . }}

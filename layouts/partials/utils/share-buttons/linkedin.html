@@ -1,0 +1,10 @@
+{{ $query := querify "url" .Permalink "mini" true "title" .Title "summary" (truncate 40 ( or .Description .Summary )) "source" .Site.BaseURL }}
+{{ $link := printf "https://linkedin.com/shareArticle?%s" $query }}
+
+{{ .Scratch.SetInMap "data" "label" "LinkedIn" }}
+{{ .Scratch.SetInMap "data"  "buttonClass" "linkedin" }}
+{{ .Scratch.SetInMap "data"  "image" "linkedin" }}
+{{ .Scratch.SetInMap "data"  "link" $link }}
+{{ .Scratch.SetInMap "data"  "ariaLabel" "Share to LinkedIn" }}
+
+{{ partial "utils/share-buttons/button.html" . }}

@@ -1,0 +1,22 @@
+{{ $noParse := 0 }}
+{{ if .Site.Params.share.vk.noParse }}
+    {{ $noParse = 1 }}
+{{ end }}
+
+{{ $noVKLinks := 0 }}
+{{ if .Site.Params.share.vk.noVKLinks }}
+    {{ $noVKLinks = 1}}
+{{ end }}
+
+{{ $imageUrl := partial "utils/share-buttons/helpers/image-url.html" . }}
+
+{{ $query := querify "url" .Permalink "title" .Title "image" $imageUrl "noparse" $noParse "no_vk_links" $noVKLinks }}
+{{ $link := printf "https://vk.com/share.php?%s" $query }}
+
+{{ .Scratch.SetInMap "data"  "label" "VK" }}
+{{ .Scratch.SetInMap "data"  "buttonClass" "vk" }} 
+{{ .Scratch.SetInMap "data"  "image" "vk" }}
+{{ .Scratch.SetInMap "data"  "link" $link }}
+{{ .Scratch.SetInMap "data"  "ariaLabel" "Share to VK" }}
+
+{{ partial "utils/share-buttons/button.html" . }}

@@ -1,0 +1,13 @@
+{{ $body := printf "%s\n\nurl: %s" (truncate 40 (or .Description .Summary)) .Permalink }}
+
+{{ $mailToParams := querify "subject" .Title "body" $body }}
+
+{{ $link := printf "mailto:?%s" $mailToParams }}
+
+{{ .Scratch.SetInMap "data" "label" "Email" }}
+{{ .Scratch.SetInMap "data" "buttonClass" "email"  }}
+{{ .Scratch.SetInMap "data" "image" "email"  }}
+{{ .Scratch.SetInMap "data" "link" $link  }}
+{{ .Scratch.SetInMap "data" "ariaLabel" "Share with email" }}
+
+{{ partial "utils/share-buttons/button.html" . }}

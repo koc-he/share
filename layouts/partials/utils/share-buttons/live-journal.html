@@ -1,0 +1,10 @@
+{{ $query := querify "url" .Permalink "subject" .Title "event" (truncate 40 ( or .Description .Summary )) }}
+{{ $link := printf "https://www.livejournal.com/update.bml?%s" $query }}
+
+{{ .Scratch.SetInMap "data" "label" "Live Journal" }}
+{{ .Scratch.SetInMap "data"  "buttonClass" "live-journal" }} 
+{{ .Scratch.SetInMap "data"  "image" "live-journal" }}
+{{ .Scratch.SetInMap "data"  "link" $link }}
+{{ .Scratch.SetInMap "data"  "ariaLabel" "Share to Live Journal" }}
+
+{{ partial "utils/share-buttons/button.html" . }}

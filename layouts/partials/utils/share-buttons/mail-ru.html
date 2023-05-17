@@ -1,0 +1,12 @@
+{{ $imageUrl := partial "utils/share-buttons/helpers/image-url.html" . }}
+
+{{ $query := querify "url" .Permalink "title" .Title "description" (truncate 40 ( or .Description .Summary )) "image_url" $imageUrl }}
+{{ $link := printf "https://connect.mail.ru/share?%s" $query }}
+
+{{ .Scratch.SetInMap "data"  "label" "Mail.ru" }}
+{{ .Scratch.SetInMap "data"  "buttonClass" "mail-ru" }}
+{{ .Scratch.SetInMap "data"  "image" "mail-ru" }}
+{{ .Scratch.SetInMap "data"  "link" $link }}
+{{ .Scratch.SetInMap "data"  "ariaLabel" "Share to Mail.ru" }}
+
+{{ partial "utils/share-buttons/button.html" . }}

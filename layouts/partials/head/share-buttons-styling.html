@@ -1,0 +1,3 @@
+{{ $options := (dict "targetPath" "share-buttons.css" "outputStyle" "compressed" "enableSourceMap" (not hugo.IsProduction)) }}
+{{ $sbStyle := resources.Get "styles/share-buttons.scss" | resources.ToCSS $options }}
+<link rel="stylesheet" href="{{ $sbStyle.Permalink | absURL }}" media="screen">

@@ -1,0 +1,10 @@
+{{ $query := querify "url" .Permalink "title" .Title "description" (truncate 40 ( or .Description .Summary )) }}
+{{ $link := printf "http://www.instapaper.com/hello2?%s" $query }}
+
+{{ .Scratch.SetInMap "data" "label" "Instapaper" }}
+{{ .Scratch.SetInMap "data"  "buttonClass" "instapaper" }}
+{{ .Scratch.SetInMap "data"  "image" "instapaper" }}
+{{ .Scratch.SetInMap "data"  "link" $link }}
+{{ .Scratch.SetInMap "data"  "ariaLabel" "Share to Instapaper" }}
+
+{{ partial "utils/share-buttons/button.html" . }}

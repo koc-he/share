@@ -1,0 +1,41 @@
+{{ $withLabel := or (.Scratch.Get "withLabel") false }}
+{{ $round := or (.Scratch.Get "round") false }}
+{{ $data := .Scratch.Get "data" }}
+
+{{ $windowHeight := or .Site.Params.window.height 400 }}
+{{ $windowWidth := or .Site.Params.window.width 550 }}
+{{ $popup := or .Site.Params.share.popup false }}
+
+{{ $popupValues := printf "popup,width=%v,height=%v" $windowWidth $windowHeight }}
+{{ $popupCmd := printf "window.open(this.href, 'new', '%s'); return false;" $popupValues }}
+
+{{ $background := .Scratch.Get "background" }}
+{{ $color := .Scratch.Get "color" }}
+{{ $activeBackground := .Scratch.Get "activeBackground" }}
+{{ $activeColor := .Scratch.Get "activeColor" }}
+{{ $isMatching := and (and $background $color) (and $activeBackground $activeColor) }}
+
+<div class="share-button-container">
+    <a 
+        href="{{ $data.link }}" 
+        {{ if $isMatching }}
+        {{ $styles := printf "--match-bg: %s; --match-color: %s; --match-active-bg: %s; --match-active-color: %s;" $background $color $activeBackground $activeColor }}
+        style="{{ $styles | safeCSS }}"
+        {{ end }}
+        class="share-button {{ $data.buttonClass }} {{ if $withLabel }} with-label {{ else if $round }} round {{ end }} {{ if $isMatching }}matching{{ end }}" 
+        aria-label="{{$data.ariaLabel}}"
+        {{ if $popup }}
+        onclick="window.open(this.href, 'new', {{$popupValues}}); return false;"
+        {{ else }}
+        target="_blank" 
+        rel="noopener noreferrer"
+        {{ end }}
+    >
+        {{ if $withLabel }} 
+        <h4>
+            {{ $data.label }}
+        </h4>
+        {{ end }}
+        {{ readFile ( printf "static/share-buttons/%s.svg" $data.image ) | safeHTML }}
+    </a>
+</div>

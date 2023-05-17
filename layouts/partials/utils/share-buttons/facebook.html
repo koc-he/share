@@ -1,0 +1,10 @@
+{{ $query := querify "u" .Permalink "quote" .Title "hashtag" ( or .Params.share.facebook.hashtag "" ) }}
+{{ $link := printf "https://www.facebook.com/sharer/sharer.php?%s" $query }}
+
+{{ .Scratch.SetInMap "data"  "label" "Facebook" }}
+{{ .Scratch.SetInMap "data"  "buttonClass" "facebook" }}
+{{ .Scratch.SetInMap "data"  "image" "facebook" }}
+{{ .Scratch.SetInMap "data"  "link" $link }}
+{{ .Scratch.SetInMap "data"  "ariaLabel" "Share to Facebook" }}
+
+{{ partial "utils/share-buttons/button.html" . }}

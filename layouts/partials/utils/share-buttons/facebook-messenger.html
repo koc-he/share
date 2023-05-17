@@ -1,0 +1,13 @@
+{{ $appId := .Site.Params.share.facebookMessenger.appId }}
+{{ $redirectUri := or .Params.share.facebookMessenger.redirectUri .Permalink }}
+
+{{ $query := querify "url" .Permalink "redirect_uri" $redirectUri "app_id" $appId }}
+{{ $link := printf "https://www.facebook.com/dialog/send?%s" $query }}
+
+{{ .Scratch.SetInMap "data" "label" "Facebook Messenger" }}
+{{ .Scratch.SetInMap "data" "buttonClass" "facebook-messenger" }} 
+{{ .Scratch.SetInMap "data" "image" "facebook-messenger" }}
+{{ .Scratch.SetInMap "data" "link" $link }}
+{{ .Scratch.SetInMap "data" "ariaLabel" "Share to Facebook Messenger" }}
+
+{{ partial "utils/share-buttons/button.html" . }}

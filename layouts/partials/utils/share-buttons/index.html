@@ -1,0 +1,16 @@
+<div class="share-buttons">    
+    {{ $all := false }}
+    
+    {{ if eq ( .Param "enabled" ) nil }}
+    {{ $all = true }}
+    {{ end }}
+
+    {{ $smButtons := slice "email" "facebook-messenger" "facebook" "hatena" "instapaper" "line" "linkedin" "live-journal" "mail-ru" "odnoklassniki" "pinterest" "pocket" "reddit" "telegram" "tumblr" "twitter" "viber" "vk" "weibo" "whatsapp" "workplace" }}   
+    
+    {{ $context := . }}
+    {{ range $smb := $smButtons }}
+        {{ if or $all ( in .enabled $smb ) }}
+            {{ partial (printf "utils/share-buttons/%s.html" $smb ) $context }}
+        {{ end }}
+    {{ end }}
+</div>

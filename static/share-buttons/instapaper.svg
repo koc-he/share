@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   width="15.199"
+   height="32"
+   fill="currentColor"
+   viewBox="0 0 15.199 32"
+   version="1.1"
+   id="svg4"
+   sodipodi:docname="instapaper.svg"
+   inkscape:version="1.2.2 (1:1.2.2+202212051552+b0a8486541)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs8" />
+  <sodipodi:namedview
+     id="namedview6"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     showgrid="false"
+     inkscape:zoom="7.4375"
+     inkscape:cx="7.6638655"
+     inkscape:cy="16.067227"
+     inkscape:window-width="1292"
+     inkscape:window-height="704"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg4" />
+  <path
+     d="m 11.287,27.012 c 0,2.425 0.361,2.785 3.912,3.056 V 32 H 0 v -1.932 c 3.555,-0.27 3.912,-0.63 3.912,-3.056 V 4.944 C 3.912,2.565 3.552,2.159 0,1.888 V 0 h 15.199 v 1.888 c -3.55,0.27 -3.912,0.675 -3.912,3.056 v 22.068 h 10e-4 z"
+     id="path2" />
+</svg>
