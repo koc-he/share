@@ -1,7 +1,10 @@
+{{ $query := querify "url" .Permalink "title" .Title }}
+{{ $link := printf "https://getpocket.com/save?%s" $query }}
+
 {{ .Scratch.SetInMap "data"  "label" "Pocket" }}
 {{ .Scratch.SetInMap "data"  "buttonClass" "pocket" }}
 {{ .Scratch.SetInMap "data"  "image" "pocket" }}
-{{ .Scratch.SetInMap "data"  "link" "/" }}
+{{ .Scratch.SetInMap "data"  "link" $link }}
 {{ .Scratch.SetInMap "data"  "ariaLabel" "Share to Pocket" }}
 
 {{ partial "utils/share-buttons/button.html" . }}
