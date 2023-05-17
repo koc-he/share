@@ -1,7 +1,12 @@
+{{ $imageUrl := partial "utils/share-buttons/helpers/image-url.html" . }}
+
+{{ $query := querify "url" .Permalink "title" .Title "pic" $imageUrl }}
+
+{{ $link := printf "http://service.weibo.com/share/share.php?%s" $query }} 
 {{ .Scratch.SetInMap "data"  "label" "Weibo" }}
 {{ .Scratch.SetInMap "data"  "buttonClass" "weibo" }} 
 {{ .Scratch.SetInMap "data"  "image" "weibo" }}
-{{ .Scratch.SetInMap "data"  "link" "/" }}
+{{ .Scratch.SetInMap "data"  "link" $link }}
 {{ .Scratch.SetInMap "data"  "ariaLabel" "Share to Weibo" }}
 
 {{ partial "utils/share-buttons/button.html" . }}
