@@ -14,3 +14,6 @@ description = 'Social media share buttons for Hugo.'
         [params.share.twitter]
             accountHandle = 'twitterdev'
             relatedAccounts = ['twitter']
+        [params.share.vk]
+            noParse = true
+            noVKLinks = true
