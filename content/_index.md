@@ -5,6 +5,13 @@ draft: false
 share:
     facebook:
         redirectUri: 'http://localhost:1313'
+    tumblr:
+        tags:
+            - lorem
+            - ipsum
+            - dolor
+            - sit
+            - amet
 images:
     - 'share.svg'
 ---
