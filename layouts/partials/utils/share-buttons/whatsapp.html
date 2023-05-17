@@ -1,4 +1,4 @@
-{{ $query := querify "text" (printf " %s %s" .Permalink .Title) }}
+{{ $query := querify "text" (printf "%s %s" .Title .Permalink) }}
 {{ $link := printf "https://api.whatsapp.com/send?%s" $query }} 
 
 {{ .Scratch.SetInMap "data"  "label" "WhatsApp" }}
