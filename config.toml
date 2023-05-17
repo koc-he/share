@@ -1,4 +1,4 @@
-baseURL = '/'
+baseURL = 'https://share-6rr.pages.dev/'
 languageCode = 'en-us'
 title = 'share'
 description = 'Social media share buttons for Hugo.'
