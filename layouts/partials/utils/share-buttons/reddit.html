@@ -1,3 +1,6 @@
+{{ $query := querify "url" .Permalink "title" .Title }}
+{{ $link := printf "https://www.reddit.com/submit?%s" $query }}
+
 {{ .Scratch.SetInMap "data"  "label" "Reddit" }}
 {{ .Scratch.SetInMap "data"  "buttonClass" "reddit" }} 
 {{ .Scratch.SetInMap "data"  "image" "reddit" }}
