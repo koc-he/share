@@ -1,0 +1,12 @@
+{{ $formattedTags := slice }}
+{{ $useHashtag := "" }}
+
+{{ if .useHashtag }}
+{{ $useHashtag = "#" }}
+{{ end }}
+
+{{ range .tags }}
+    {{ $formattedTags = $formattedTags | append (printf "%s%s" $useHashtag (replace (anchorize .) "-" "")) }}
+{{ end }}
+
+{{ return delimit $formattedTags "," }}

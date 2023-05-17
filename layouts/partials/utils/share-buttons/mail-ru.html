@@ -1,4 +1,4 @@
-{{ $imageUrl := partial "utils/share-buttons/image-url.html" . }}
+{{ $imageUrl := partial "utils/share-buttons/helpers/image-url.html" . }}
 
 {{ $query := querify "url" .Permalink "title" .Title "description" (truncate 40 ( or .Description .Summary )) "image_url" $imageUrl }}
 {{ $link := printf "https://connect.mail.ru/share?%s" $query }}

@@ -1,4 +1,4 @@
-{{ $imageUrl := partial "utils/share-buttons/image-url.html" . }}
+{{ $imageUrl := partial "utils/share-buttons/helpers/image-url.html" . }}
 
 {{ $query := querify "url" .Permalink "description" (truncate 40 ( or .Description .Summary )) "media" $imageUrl }}
 {{ $link := printf "https://pinterest.com/pin/create/button?%s" $query }}
