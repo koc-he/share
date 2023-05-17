@@ -1,7 +1,10 @@
+{{ $query := querify "text" (printf " %s %s" .Permalink .Title) }}
+{{ $link := printf "https://api.whatsapp.com/send?%s" $query }} 
+
 {{ .Scratch.SetInMap "data"  "label" "WhatsApp" }}
 {{ .Scratch.SetInMap "data"  "buttonClass" "whatsapp" }} 
 {{ .Scratch.SetInMap "data"  "image" "whatsapp" }}
-{{ .Scratch.SetInMap "data"  "link" "/" }}
+{{ .Scratch.SetInMap "data"  "link" $link }}
 {{ .Scratch.SetInMap "data"  "ariaLabel" "Share to WhatsApp" }}
 
 {{ partial "utils/share-buttons/button.html" . }}
