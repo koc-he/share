@@ -4,7 +4,7 @@
 {{ .Scratch.SetInMap "data"  "label" "Reddit" }}
 {{ .Scratch.SetInMap "data"  "buttonClass" "reddit" }} 
 {{ .Scratch.SetInMap "data"  "image" "reddit" }}
-{{ .Scratch.SetInMap "data"  "link" "/" }}
+{{ .Scratch.SetInMap "data"  "link" $link }}
 {{ .Scratch.SetInMap "data"  "ariaLabel" "Share to Reddit" }}
 
 {{ partial "utils/share-buttons/button.html" . }}

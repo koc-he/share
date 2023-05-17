@@ -2,8 +2,8 @@
 {{ $round := or (.Scratch.Get "round") false }}
 {{ $data := .Scratch.Get "data" }}
 
-{{ $windowHeight := or .Site.Params.window.height 500 }}
-{{ $windowWidth := or .Site.Params.window.width 500 }}
+{{ $windowHeight := or .Site.Params.window.height 400 }}
+{{ $windowWidth := or .Site.Params.window.width 550 }}
 {{ $popup := or .Site.Params.share.popup false }}
 
 {{ $popupValues := printf "popup,width=%v,height=%v" $windowWidth $windowHeight }}
