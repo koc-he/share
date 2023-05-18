@@ -1,4 +1,4 @@
-baseURL = '/'
+baseURL = 'https://share-6rr.pages.dev/'
 languageCode = 'en-us'
 title = 'share'
 description = 'Social media share buttons for Hugo.'
@@ -17,3 +17,10 @@ description = 'Social media share buttons for Hugo.'
         [params.share.vk]
             noParse = true
             noVKLinks = true
+
+[markup]
+   defaultMarkdownHandler = "goldmark"
+   
+   [markup.goldmark]
+      [markup.goldmark.renderer]
+         unsafe = true

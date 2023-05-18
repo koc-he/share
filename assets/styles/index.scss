@@ -1,5 +1,44 @@
 @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;700&display=swap');
 
+html {
+    background: rgb(255,255,255);
+    background: linear-gradient(50deg, rgba(255,255,255,1) 30%, rgba(235,244,245,1) 53%, rgba(233,243,244,1) 79%, rgba(181,198,224,1) 100%);
+}
+
+* {
+    font-family: 'Manrope', sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: flex-start;
+    align-items: stretch;
+    flex-direction: column;
+    margin: 20px 40px 40px 40px;
+    min-height: 100vh;
+    max-width: 1200px;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+
+    .header-links {
+        display: flex;
+        gap: 15px;
+
+        a {
+            text-decoration: none;
+            color: black;
+
+            &hover, &visited, &active {
+                color: black;
+                font-weight: bolder;
+            }
+        }
+    }
+}
+
 .container {
     display: flex;
     gap: 30px;
@@ -88,20 +127,8 @@ hr {
     width: 100px;
 }
 
-body {
-    display: flex;
-    justify-content: flex-start;
-    align-items: stretch;
-    flex-direction: column;
-    font-family: 'Manrope', sans-serif;
-    margin: 20px 40px 40px 40px;
-    min-height: 100vh;
-    max-width: 1200px;
-}
-
-html {
-    background: rgb(255,255,255);
-    background: linear-gradient(50deg, rgba(255,255,255,1) 30%, rgba(235,244,245,1) 53%, rgba(233,243,244,1) 79%, rgba(181,198,224,1) 100%);
+.copyright {
+    margin: 0 auto;
 }
 
 @media (min-width: 1201px) {

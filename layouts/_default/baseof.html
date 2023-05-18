@@ -7,8 +7,14 @@
     {{ end }}
     </title>
     <link rel="icon" type="image/x-icon" href="/favicon.jpg">
+    
+    {{ $options := (dict "targetPath" "styles.css" "outputStyle" "compressed" "enableSourceMap" (not hugo.IsProduction)) }}
+    {{ $indexStyle := resources.Get "styles/index.scss" | resources.ToCSS $options }}
+    <link rel="stylesheet" href="{{ $indexStyle.Permalink | absURL }}" media="screen">
+    
     {{ block "head" . }}
     {{ end }}
+
     {{partial "head/share-buttons-styling.html"}}
   </head>
   <body>

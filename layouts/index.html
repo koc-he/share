@@ -1,11 +1,12 @@
-{{ define "head" }}
-    {{ $options := (dict "targetPath" "styles.css" "outputStyle" "compressed" "enableSourceMap" (not hugo.IsProduction)) }}
-    {{ $indexStyle := resources.Get "styles/index.scss" | resources.ToCSS $options }}
-    <link rel="stylesheet" href="{{ $indexStyle.Permalink | absURL }}" media="screen">
-{{ end }}
 {{ define "main" }}
-    <div class="logo">
-        <img src="share.svg" alt="share logo" aria-label="share logo">
+    <div class="header">
+        <div class="logo">
+            <img src="share.svg" alt="share logo" aria-label="share logo">
+        </div>
+        <div class="header-links">
+            <a href="/documentation" aria-label="Documentation">Documentation</a>
+            <a href="https://github.com/koc-he/share" aria-label="Github">Github</a>
+        </div>
     </div>
 
     <div class="title-container">
@@ -86,8 +87,8 @@
         {{ partial "utils/share-buttons/index.html" . }}
     </div>
     <p class="subtitle">
-        Rectangular
-        <span>Select Buttons</span>
+        Select Buttons
+        <span>Rectangular</span>
         <span>With Labels</span>
         <span>Brand Colours</span>
     </p>
@@ -97,4 +98,14 @@
         {{ .Scratch.Set "enabled" (slice "email" "twitter" "linkedin" "facebook" "reddit" "whatsapp" "pinterest") }}
         {{ partial "utils/share-buttons/index.html" . }}
     </div>
+    <p class="subtitle">
+        Individual/Singular Button
+        <span>Rectangular</span>
+        <span>With Label</span>
+        <span>Brand Colour</span>
+    </p>
+    <div class="container">
+        {{ partial "utils/share-buttons/linkedin.html" . }}
+    </div>
+    <p class="copyright">Copyright © {{ time.Format "2006" now }} koc-he. All rights reserved.</p>
 {{ end }}
