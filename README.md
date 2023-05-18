@@ -1,11 +1,50 @@
 <h1 align="center">Share</h1>
 <div align="center">
-<img src="https://img.shields.io/badge/hugo%20version-v0.111.3-EB17A4?style=for-the-badge&labelColor=000000">
-<img src="https://img.shields.io/github/license/koc-he/codeblock-annotation?logoColor=000000&style=for-the-badge&labelColor=000000">
+    <a href="https://github.com/gohugoio/hugo/releases/tag/v0.111.3" aria-label="Hugo version">  
+        <img src="https://img.shields.io/badge/hugo%20version-v0.111.3-EB17A4?style=for-the-badge&labelColor=000000">
+    </a>
+    <a href="https://github.com/koc-he/share/blob/main/LICENSE.md" aria-label="License">
+        <img src="https://img.shields.io/github/license/koc-he/share?logoColor=000000&style=for-the-badge&labelColor=000000">
+    </a>
 </div>
+<br>
 <br>
 
 This is social media share buttons module for Hugo websites. 
+
+## Table of Contents
+- [Table of Contents](#table-of-contents)
+- [Supported Social Media and Other Platforms](#supported-social-media-and-other-platforms)
+- [Requirements](#requirements)
+- [Installation](#installation)
+- [Usage](#usage)
+  - [Shapes and Labels](#shapes-and-labels)
+  - [Colours](#colours)
+  - [Enabling Specific Buttons](#enabling-specific-buttons)
+  - [Resetting the Configuration](#resetting-the-configuration)
+- [Shared Information Configuration](#shared-information-configuration)
+  - [1. Email](#1-email)
+  - [2. Facebook Messenger](#2-facebook-messenger)
+  - [3. Facebook](#3-facebook)
+  - [4. Hatena](#4-hatena)
+  - [5. Instapaper](#5-instapaper)
+  - [6. Line](#6-line)
+  - [7. LinkedIn](#7-linkedin)
+  - [8. Live Journal](#8-live-journal)
+  - [9. Mail.ru](#9-mailru)
+  - [10. Odnoklassniki](#10-odnoklassniki)
+  - [11. Pinterest](#11-pinterest)
+  - [12. Pocket](#12-pocket)
+  - [13. Reddit](#13-reddit)
+  - [14. Telegram](#14-telegram)
+  - [15. Tumblr](#15-tumblr)
+  - [16. Twitter](#16-twitter)
+  - [17. Viber](#17-viber)
+  - [18. VK](#18-vk)
+  - [19. Weibo](#19-weibo)
+  - [20. Whatsapp](#20-whatsapp)
+  - [21. Workplace](#21-workplace)
+- [Other Configuration Properties](#other-configuration-properties)
 
 ## Supported Social Media and Other Platforms
 - Email
@@ -31,9 +70,9 @@ This is social media share buttons module for Hugo websites.
 - Workplace
 
 ## Requirements
-- Hugo `v0.111.3` 
-> This module was written with this version of Hugo but it might be compatible with earlier versions.
+- **Hugo** `v0.111.3` 
 - [A Hugo site that has been initialized as a module](https://gohugo.io/hugo-modules/use-modules/#initialize-a-new-module).
+> This module was written with this version of Hugo but it might be compatible with earlier versions.
 
 ## Installation
 1. In your Hugo config (toml), add this:
@@ -74,6 +113,8 @@ To use the buttons in a rectangular shape with labels, set the variable `withLab
 {{ .Scratch.Set "withLabel" true }}
 {{partial "utils/share-buttons/index.html" . }}
 ```
+
+
 ### Colours
 The default button colours are the brand colours for each of the social media sites. 
 
@@ -92,6 +133,8 @@ Here's an example:
 {{ .Scratch.Set "activeColor" "#000000" }}
 {{ partial "utils/share-buttons/index.html" . }}
 ```
+
+
 ### Enabling Specific Buttons
 By default, all the buttons are shown. 
 
@@ -133,6 +176,7 @@ You can also chose to include individual button partials like this:
 
 Just add any of the above tags where there is a placeholder here `utils/share-buttons/[tag placeholder].html`.
 
+
 ### Resetting the Configuration
 You can reset the configuration by calling this partial:
 ```twig
@@ -146,11 +190,13 @@ In the **Your Intervention** column, anything marked with:
 - 🔧 requires your intervention. You need to set these values yourself. 
 - ✨ has been automatically set based on available Hugo site and page variables. It doesn't require you to do anything. 
 
+
 ### 1. Email
 | Platform Requirement | Hugo Equivalent | Your Intervention | 
 | ----- | ----- |  ----- |
 | `subject` | `.Title`| ✨ |
 | `body` | `.Description` or `.Summary` with `.Permalink` | ✨ |
+
 
 ### 2. Facebook Messenger
 | Platform Requirement | Hugo Equivalent | Your Intervention | 
@@ -174,6 +220,7 @@ share:
         redirectUri: 'https://example.com'
 ``` 
 
+
 ### 3. Facebook
 | Platform Requirement | Hugo Equivalent | Your Intervention | 
 | ----- | ----- |  ----- |
@@ -189,11 +236,13 @@ share:
 ``` 
 > Note that the hashtag is a single string and not a list.
 
+
 ### 4. Hatena
 | Platform Requirement | Hugo Equivalent | Your Intervention | 
 | ----- | ----- |  ----- |
 | `url` | `.Permalink` | ✨ | 
 | `title` | `.Title` | ✨ |
+
 
 ### 5. Instapaper
 | Platform Requirement | Hugo Equivalent | Your Intervention | 
@@ -202,11 +251,13 @@ share:
 | `quote` | `.Title` | ✨ |
 | `description` | first 40 characters of `.Description` or `.Summary` | ✨ |
 
+
 ### 6. Line
 | Platform Requirement | Hugo Equivalent | Your Intervention | 
 | ----- | ----- |  ----- |
 | `url` | `.Permalink` | ✨ | 
 | `text` | `.Title` | ✨ |
+
 
 ### 7. LinkedIn
 | Platform Requirement | Hugo Equivalent | Your Intervention | 
@@ -216,12 +267,14 @@ share:
 | `summary` | first 40 characters of `.Description` or `.Summary` | ✨ |
 | `source` | `.Site.BaseURL` | ✨ |
 
+
 ### 8. Live Journal
 | Platform Requirement | Hugo Equivalent | Your Intervention | 
 | ----- | ----- |  ----- |
 | `url` | `.Permalink` | ✨ | 
 | `subject` | `.Title` | ✨ |
 | `event` | first 40 characters of `.Description` or `.Summary` | ✨ |
+
 
 ### 9. Mail.ru
 | Platform Requirement | Hugo Equivalent | Your Intervention | 
@@ -237,6 +290,7 @@ images:
     - 'share.svg'
 ``` 
 
+
 ### 10. Odnoklassniki
 | Platform Requirement | Hugo Equivalent | Your Intervention | 
 | ----- | ----- |  ----- |
@@ -251,6 +305,7 @@ images:
     - 'share.svg'
 ``` 
 
+
 ### 11. Pinterest
 | Platform Requirement | Hugo Equivalent | Your Intervention | 
 | ----- | ----- |  ----- |
@@ -264,11 +319,13 @@ images:
     - 'share.svg'
 ``` 
 
+
 ### 12. Pocket
 | Platform Requirement | Hugo Equivalent | Your Intervention | 
 | ----- | ----- |  ----- |
 | `url` | `.Permalink` | ✨ | 
 | `title` | `.Title` | ✨ |
+
 
 ### 13. Reddit
 | Platform Requirement | Hugo Equivalent | Your Intervention | 
@@ -276,11 +333,13 @@ images:
 | `url` | `.Permalink` | ✨ | 
 | `title` | `.Title` | ✨ |
 
+
 ### 14. Telegram
 | Platform Requirement | Hugo Equivalent | Your Intervention | 
 | ----- | ----- |  ----- |
 | `url` | `.Permalink` | ✨ | 
 | `text` | `.Title` | ✨ |
+
 
 ### 15. Tumblr
 | Platform Requirement | Hugo Equivalent | Your Intervention | 
@@ -304,6 +363,7 @@ share:
         - sit
         - amet
 ``` 
+
 
 ### 16. Twitter
 | Platform Requirement | Hugo Equivalent | Your Intervention | 
@@ -338,10 +398,12 @@ share:
         - amet
 ``` 
 
+
 ### 17. Viber
 | Platform Requirement | Hugo Equivalent | Your Intervention | 
 | ----- | ----- |  ----- |
 | `text` | `.Title` and `.Permalink` separated by a space | ✨ |
+
 
 ### 18. VK
 | Platform Requirement | Hugo Equivalent | Your Intervention | 
@@ -371,6 +433,7 @@ images:
     - 'share.svg'
 ``` 
 
+
 ### 19. Weibo
 | Platform Requirement | Hugo Equivalent | Your Intervention | 
 | ----- | ----- |  ----- |
@@ -384,10 +447,12 @@ images:
     - 'share.svg'
 ``` 
 
+
 ### 20. Whatsapp
 | Platform Requirement | Hugo Equivalent | Your Intervention | 
 | ----- | ----- |  ----- |
 | `text` | `.Title` and `.Permalink` separated by a space | ✨ |
+
 
 ### 21. Workplace
 | Platform Requirement | Hugo Equivalent | Your Intervention | 
@@ -403,6 +468,7 @@ share:
         hashtag: 'lorem'
 ``` 
 > Note that the hashtag is a single string and not a list.
+
 
 ## Other Configuration Properties
 By default, all sharing links are opened in a new tab. If you'd like them to open as a popup window, set `.Site.Params.share.popup` to `true`. You can also specify the dimensions of the popup window using `.Site.Params.share.window.height` and `.Site.Params.share.window.width`. These are both numerical values. 
