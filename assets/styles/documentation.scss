@@ -35,6 +35,11 @@
 
 #documentation--content .highlight pre {
     padding: 15px;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+#documentation--content code span {
+    font-family: 'Courier New', Courier, monospace;
 }
 
 #documentation--content blockquote {
@@ -57,6 +62,7 @@
     flex-direction: column;
     color: #f8f8f2;
     padding: 10px;
+    font-family: 'Courier New', Courier, monospace;
 }
 
 #documentation--content td>code,
@@ -67,6 +73,7 @@
     padding: 0 3px;
     border-radius: 5px;
     margin: 3px;
+    font-family: 'Courier New', Courier, monospace;
 }
 
 #documentation--content pre code,

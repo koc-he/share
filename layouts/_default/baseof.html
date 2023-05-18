@@ -1,26 +1,43 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <title>{{ block "title" . }}
-      {{ .Site.Title }}
-    {{ end }}
-    </title>
-    <link rel="icon" type="image/x-icon" href="/favicon.jpg">
-    
-    {{ $options := (dict "targetPath" "styles.css" "outputStyle" "compressed" "enableSourceMap" (not hugo.IsProduction)) }}
-    {{ $indexStyle := resources.Get "styles/index.scss" | resources.ToCSS $options }}
-    <link rel="stylesheet" href="{{ $indexStyle.Permalink | absURL }}" media="screen">
-    
-    {{ block "head" . }}
-    {{ end }}
 
-    {{partial "head/share-buttons-styling.html"}}
-  </head>
-  <body>
-    {{ block "main" . }}
+<head>
+  <meta charset="utf-8">
+  <title>{{ block "title" . }}
+    {{ .Site.Title }}
     {{ end }}
-    {{ block "footer" . }}
-    {{ end }}
-  </body>
+  </title>
+  <link rel="icon" type="image/x-icon" href="/favicon.jpg">
+
+  {{ $options := (dict "targetPath" "styles.css" "outputStyle" "compressed" "enableSourceMap" (not hugo.IsProduction))
+  }}
+  {{ $indexStyle := resources.Get "styles/index.scss" | resources.ToCSS $options }}
+  <link rel="stylesheet" href="{{ $indexStyle.Permalink | absURL }}" media="screen">
+
+  {{ block "head" . }}
+  {{ end }}
+
+  {{partial "head/share-buttons-styling.html"}}
+</head>
+
+<body>
+  <div class="header">
+    <div class="logo">
+      <img src="/share.svg" alt="share logo" aria-label="share logo">
+    </div>
+    <div class="header-links">
+      <a href="/" aria-label="Home">Home</a>
+      <a href="/documentation" aria-label="Documentation">Documentation</a>
+      <a href="https://github.com/koc-he/share" aria-label="Github">Github</a>
+    </div>
+  </div>
+  {{ block "main" . }}
+  {{ end }}
+  {{ block "footer" . }}
+  <p class="copyright">
+    Copyright © {{ time.Format "2006" now }} koc-he. All rights reserved.
+  </p>
+  {{ end }}
+</body>
+
 </html>
