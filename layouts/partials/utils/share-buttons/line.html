@@ -1,4 +1,4 @@
-{{ $query := querify "url" .Permalink "text" (truncate 40 ( or .Description .Summary )) }}
+{{ $query := querify "url" .Permalink "text" .Title }}
 {{ $link := printf "https://social-plugins.line.me/lineit/share?%s" $query }}
 
 {{ .Scratch.SetInMap "data"  "label" "Line" }}
