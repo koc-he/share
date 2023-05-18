@@ -1,0 +1,17 @@
+{{ define "head" }}
+    {{ $options := (dict "targetPath" "documentation.css" "outputStyle" "compressed" "enableSourceMap" (not hugo.IsProduction)) }}
+    {{ $documentationStyle := resources.Get "styles/documentation.scss" | resources.ToCSS $options }}
+    <link rel="stylesheet" href="{{ $documentationStyle.Permalink | absURL }}" media="screen">
+{{ end }}
+
+{{ define "main" }}
+<h1 class="title documentation-title">Documentation</h1>
+<section id="documentation--body">
+  <div>
+    <article id="documentation--content">
+        {{ $file := readFile "README.md" }}
+        {{ markdownify $file }}
+    </article>
+  </div>
+</section>
+{{ end }}

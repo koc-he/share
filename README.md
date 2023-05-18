@@ -45,7 +45,7 @@ This is social media share buttons module for Hugo websites.
 Hugo will automatically download the module when your site is run or built.
 
 2. In the <head> tag of your site, add this partial:
-```twig
+```
 <head>
     <!-- Other things in your head tag -->
     {{partial "head/share-buttons-styling.html" . }}
@@ -56,7 +56,7 @@ Hugo will automatically download the module when your site is run or built.
 Here is a basic example. All the buttons are enabled when no configuration is set. 
 
 To use all the buttons add this partial:
-```twig
+```
 {{partial "utils/share-buttons/index.html" . }}
 ```
 
@@ -64,13 +64,13 @@ To use all the buttons add this partial:
 The default shape is **square**, with no label.
 
 To use the buttons in a round shape, set the variable `round` to `true` in the page's scratch pad:
-```twig
+```
 {{ .Scratch.Set "round" true }}
 {{partial "utils/share-buttons/index.html" . }}
 ```
 
 To use the buttons in a rectangular shape with labels, set the variable `withLabel` to `true` in the page's scratch pad:
-```twig
+```
 {{ .Scratch.Set "withLabel" true }}
 {{partial "utils/share-buttons/index.html" . }}
 ```
@@ -85,7 +85,7 @@ normal and active states, set these values in the page's scratch pad (using `.Sc
 - `activeColour`: the text colour of the buttons in their `active` and `hover` state.
 
 Here's an example:
-```twig
+```
 {{ .Scratch.Set "background" "#aab2ff" }}
 {{ .Scratch.Set "color" "#112A46" }}
 {{ .Scratch.Set "activeBackground" "#ffffff" }}
@@ -121,13 +121,13 @@ whatsapp
 workplace
 ```
 Here's an example of how to set the `enabled` variable:
-```twig
+```
 {{ .Scratch.Set "enabled" (slice "email" "twitter" "linkedin" "facebook" "reddit" "whatsapp" "pinterest") }}
 {{ partial "utils/share-buttons/index.html" . }}
 ```
 
 You can also chose to include individual button partials like this: 
-```twig
+```
 {{ partial "utils/share-buttons/linkedin.html" . }}
 ```
 
@@ -135,7 +135,7 @@ Just add any of the above tags where there is a placeholder here `utils/share-bu
 
 ### Resetting the Configuration
 You can reset the configuration by calling this partial:
-```twig
+```
 {{ partial "utils/share-buttons/helpers/reset.html" . }}
 ```
 

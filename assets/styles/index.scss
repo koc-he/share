@@ -5,13 +5,15 @@ html {
     background: linear-gradient(50deg, rgba(255,255,255,1) 30%, rgba(235,244,245,1) 53%, rgba(233,243,244,1) 79%, rgba(181,198,224,1) 100%);
 }
 
+* {
+    font-family: 'Manrope', sans-serif;
+}
 
 body {
     display: flex;
     justify-content: flex-start;
     align-items: stretch;
     flex-direction: column;
-    font-family: 'Manrope', sans-serif;
     margin: 20px 40px 40px 40px;
     min-height: 100vh;
     max-width: 1200px;

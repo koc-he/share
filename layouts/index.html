@@ -1,8 +1,3 @@
-{{ define "head" }}
-    {{ $options := (dict "targetPath" "styles.css" "outputStyle" "compressed" "enableSourceMap" (not hugo.IsProduction)) }}
-    {{ $indexStyle := resources.Get "styles/index.scss" | resources.ToCSS $options }}
-    <link rel="stylesheet" href="{{ $indexStyle.Permalink | absURL }}" media="screen">
-{{ end }}
 {{ define "main" }}
     <div class="header">
         <div class="logo">

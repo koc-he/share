@@ -17,3 +17,10 @@ description = 'Social media share buttons for Hugo.'
         [params.share.vk]
             noParse = true
             noVKLinks = true
+
+[markup]
+   defaultMarkdownHandler = "goldmark"
+   
+   [markup.goldmark]
+      [markup.goldmark.renderer]
+         unsafe = true
