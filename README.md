@@ -6,11 +6,19 @@
     <a href="https://github.com/koc-he/share/blob/main/LICENSE.md" aria-label="License">
         <img src="https://img.shields.io/github/license/koc-he/share?logoColor=000000&style=for-the-badge&labelColor=000000">
     </a>
+    <a href="https://github.com/koc-he/share/releases" aria-label="Latest release">
+        <img src="https://img.shields.io/github/v/release/koc-he/share?style=for-the-badge&labelColor=000000">
+    </a>
 </div>
 <br>
 <br>
 
-This is social media share buttons module for Hugo websites. 
+
+<img id="screenshot-1" class="screenshot" src="/static/share-buttons/screenshots/1.png" alt="labelled buttons screenshot"/>
+
+<img id="screenshot-2" class="screenshot" src="/static/share-buttons/screenshots/1.png" alt="square buttons screenshot"/>
+
+This is social media share button module for Hugo websites. 
 
 ## Table of Contents
 - [Table of Contents](#table-of-contents)
@@ -22,7 +30,7 @@ This is social media share buttons module for Hugo websites.
   - [Colours](#colours)
   - [Enabling Specific Buttons](#enabling-specific-buttons)
   - [Resetting the Configuration](#resetting-the-configuration)
-- [Shared Information Configuration](#shared-information-configuration)
+- [Share Information Configuration](#share-information-configuration)
   - [1. Email](#1-email)
   - [2. Facebook Messenger](#2-facebook-messenger)
   - [3. Facebook](#3-facebook)
@@ -72,7 +80,7 @@ This is social media share buttons module for Hugo websites.
 ## Requirements
 - **Hugo** `v0.111.3` 
 - [A Hugo site that has been initialized as a module](https://gohugo.io/hugo-modules/use-modules/#initialize-a-new-module).
-> This module was written with this version of Hugo but it might be compatible with earlier versions.
+> This module was written with the above version of Hugo but it might be compatible with earlier versions.
 
 ## Installation
 1. In your Hugo config (toml), add this:
@@ -83,7 +91,7 @@ This is social media share buttons module for Hugo websites.
 ```
 Hugo will automatically download the module when your site is run or built.
 
-2. In the <head> tag of your site, add this partial:
+2. In the `<head>` tag of your site, add this partial:
 ```twig
 <head>
     <!-- Other things in your head tag -->
@@ -102,13 +110,13 @@ To use all the buttons add this partial:
 ### Shapes and Labels
 The default shape is **square**, with no label.
 
-To use the buttons in a round shape, set the variable `round` to `true` in the page's scratch pad:
+To use the buttons in a round shape, set the variable `round` to `true` in [the page's scratch pad](https://gohugo.io/functions/scratch/):
 ```twig
 {{ .Scratch.Set "round" true }}
 {{partial "utils/share-buttons/index.html" . }}
 ```
 
-To use the buttons in a rectangular shape with labels, set the variable `withLabel` to `true` in the page's scratch pad:
+To use the buttons in a rectangular shape with labels, set the variable `withLabel` to `true` in [the page's scratch pad](https://gohugo.io/functions/scratch/):
 ```twig
 {{ .Scratch.Set "withLabel" true }}
 {{partial "utils/share-buttons/index.html" . }}
@@ -119,7 +127,7 @@ To use the buttons in a rectangular shape with labels, set the variable `withLab
 The default button colours are the brand colours for each of the social media sites. 
 
 To specify matching colours for 
-normal and active states, set these values in the page's scratch pad (using `.Scratch.Set`). 
+normal and active states, set these values in the page's scratch pad [(using `.Scratch.Set`)](https://gohugo.io/functions/scratch/). 
 - `background`: the background colour of the buttons in their normal state. 
 - `colour`: the text colour of the buttons in their normal state.
 - `activeBackground`: the background colour of the buttons in their `active` and `hover` state. 
@@ -138,7 +146,7 @@ Here's an example:
 ### Enabling Specific Buttons
 By default, all the buttons are shown. 
 
-To enable specific buttons, add their tag from the list shown below to the `enabled` slice variable to the page's scratch pad. 
+To enable specific buttons, add their tag from the list shown below to the `enabled` slice variable to [the page's scratch pad](https://gohugo.io/functions/scratch/). 
 
 ```text
 email
@@ -183,10 +191,10 @@ You can reset the configuration by calling this partial:
 {{ partial "utils/share-buttons/helpers/reset.html" . }}
 ```
 
-## Shared Information Configuration
+## Share Information Configuration
 This table explains what is shared from your Hugo content. A lot of the values are picked up automatically. 
 
-In the **Your Intervention** column, anything marked with:
+In the **Your Intervention** column in the tables below, anything marked with:
 - 🔧 requires your intervention. You need to set these values yourself. 
 - ✨ has been automatically set based on available Hugo site and page variables. It doesn't require you to do anything. 
 
