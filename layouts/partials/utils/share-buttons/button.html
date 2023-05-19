@@ -36,6 +36,6 @@
             {{ $data.label }}
         </h4>
         {{ end }}
-        {{ readFile ( printf "static/share-buttons/%s.svg" $data.image ) | safeHTML }}
+        {{ readFile ( printf "static/share-buttons/icons/%s.svg" $data.image ) | safeHTML }}
     </a>
 </div>

@@ -3,6 +3,8 @@
 html {
     background: rgb(255,255,255);
     background: linear-gradient(50deg, rgba(255,255,255,1) 30%, rgba(235,244,245,1) 53%, rgba(233,243,244,1) 79%, rgba(181,198,224,1) 100%);
+    margin: 0;
+    padding: 0;
 }
 
 * {
@@ -14,9 +16,10 @@ body {
     justify-content: flex-start;
     align-items: stretch;
     flex-direction: column;
-    margin: 20px 40px 40px 40px;
+    padding: 20px;
     min-height: 100vh;
     max-width: 1200px;
+    margin: 0;
 }
 
 .header {
@@ -81,8 +84,8 @@ body {
 .title {
     font-weight: bold;
     margin: 0 0 20px 0;
-    font-size: 80px;
-    line-height: 75px;
+    font-size: 50px;
+    line-height: 45px;
     max-width: 1000px;
 }
 
@@ -129,10 +132,42 @@ hr {
 
 .copyright {
     margin: 60px auto 20px auto;
+    text-align: center;
+}
+
+@media (min-width: 1px) and (max-width: 350px) {
+    .header-links {
+        gap: 7px;
+
+        a:nth-child(2) {
+            font-size: 0;
+        }
+
+        a:nth-child(2):after {
+            content: 'Docs';
+            font-size: 16px;
+        }
+    }
+}
+
+@media (min-width: 768px) {
+    .title {
+        font-size: 70px;
+        line-height: 65px;
+    }
+
+    body {
+        padding: 20px 40px 40px 40px;
+    }
 }
 
 @media (min-width: 1201px) {
+    .title {
+        font-size: 80px;
+        line-height: 75px;
+    }
+
     body {
-        margin: 20px auto 40px auto;
+        padding: 20px auto 40px auto;
     }
 }
