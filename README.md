@@ -16,7 +16,7 @@
 
 <img id="screenshot-1" class="screenshot" src="/static/share-buttons/screenshots/1.png" alt="labelled buttons screenshot"/>
 
-<img id="screenshot-2" class="screenshot" src="/static/share-buttons/screenshots/1.png" alt="square buttons screenshot"/>
+<img id="screenshot-2" class="screenshot" src="/static/share-buttons/screenshots/2.png" alt="square buttons screenshot"/>
 
 This is social media share button module for Hugo websites. 
 
