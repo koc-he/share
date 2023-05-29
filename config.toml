@@ -3,12 +3,9 @@ languageCode = 'en-us'
 title = 'share'
 disableKinds = ['taxonomy','taxonomyTerm']
 
-
 [params]
-   images = ['/share-buttons/screenshots/share.png']
    description = 'Social media share buttons for Hugo sites.'
-
-[params]
+   images = ['/share-buttons/screenshots/share.png']
     [params.share]
             popup = true
         [params.window]
