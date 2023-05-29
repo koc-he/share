@@ -10,6 +10,10 @@
   </title>
   <link rel="icon" type="image/x-icon" href="/favicon.jpg">
 
+  {{ template "_internal/opengraph.html" . }}
+  {{ template "_internal/schema.html" . }}
+  {{ template "_internal/twitter_cards.html" . }}
+
   {{ $options := (dict "targetPath" "styles.css" "outputStyle" "compressed" "enableSourceMap" (not hugo.IsProduction))
   }}
   {{ $indexStyle := resources.Get "styles/index.scss" | resources.ToCSS $options }}
