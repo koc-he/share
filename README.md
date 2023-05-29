@@ -1,7 +1,7 @@
 <h1 align="center">Share</h1>
 <div align="center">
     <a href="https://github.com/gohugoio/hugo/releases/tag/v0.111.3" aria-label="Hugo version">  
-        <img src="https://img.shields.io/badge/hugo%20version-v0.111.3-EB17A4?style=for-the-badge&labelColor=000000">
+        <img src="https://img.shields.io/badge/hugo-%3E%3D%200.111.3-EB17A4?style=for-the-badge&labelColor=000000">
     </a>
     <a href="https://github.com/koc-he/share/blob/main/LICENSE.md" aria-label="License">
         <img src="https://img.shields.io/github/license/koc-he/share?logoColor=000000&style=for-the-badge&labelColor=000000">
@@ -12,7 +12,6 @@
 </div>
 <br>
 <br>
-
 
 <img id="screenshot-1" class="screenshot" src="/static/share-buttons/screenshots/1.png" alt="labelled buttons screenshot"/>
 
