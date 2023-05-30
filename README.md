@@ -26,7 +26,7 @@ This is social media share button module for Hugo websites.
 - [Installation](#installation)
 - [Usage](#usage)
   - [Shapes and Labels](#shapes-and-labels)
-  - [Colours](#colours)
+  - [Colors](#colors)
   - [Enabling Specific Buttons](#enabling-specific-buttons)
   - [Resetting the Configuration](#resetting-the-configuration)
 - [Share Information Configuration](#share-information-configuration)
@@ -122,15 +122,15 @@ To use the buttons in a rectangular shape with labels, set the variable `withLab
 ```
 
 
-### Colours
-The default button colours are the brand colours for each of the social media sites. 
+### Colors
+The default button colors are the brand colors for each of the social media sites. 
 
-To specify matching colours for 
+To specify matching colors for 
 normal and active states, set these values in the page's scratch pad [(using `.Scratch.Set`)](https://gohugo.io/functions/scratch/). 
-- `background`: the background colour of the buttons in their normal state. 
-- `colour`: the text colour of the buttons in their normal state.
-- `activeBackground`: the background colour of the buttons in their `active` and `hover` state. 
-- `activeColour`: the text colour of the buttons in their `active` and `hover` state.
+- `background`: the background color of the buttons in their normal state. 
+- `color`: the text color of the buttons in their normal state.
+- `activeBackground`: the background color of the buttons in their `active` and `hover` state. 
+- `activeColor`: the text color of the buttons in their `active` and `hover` state.
 
 Here's an example:
 ```twig
