@@ -2,3 +2,4 @@ archetypes/
 themes/
 resources/
 .hugo_build.lock
+public/
